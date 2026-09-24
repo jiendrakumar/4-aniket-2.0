@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KENT Water Purifiers - House of Purity | Mineral RO, UV, Gravity Purifiers</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome 6 Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Font: Inter & Roboto -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --kent-blue-dark: #003366;
+            --kent-blue-main: #0083ca;
+            --kent-blue-light: #00a3e0;
+            --kent-cyan: #00bcd4;
+            --kent-orange: #f37021;
+            --kent-orange-hover: #d95e12;
+            --kent-gray-bg: #f4f6f9;
+            --kent-dark-text: #1d2939;
+            --kent-card-border: #e2e8f0;
+            --whatsapp-green: #25d366;
+            --whatsapp-green-hover: #1eb854;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--kent-dark-text);
+            background-color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* Top Bar Utilities */
+        .top-utility-bar {
+            background-color: var(--kent-blue-dark);
+            color: #ffffff;
+            font-size: 0.78rem;
+            padding: 5px 0;
+        }
+        .top-utility-bar a {
+            color: #d0e4f7;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .top-utility-bar a:hover {
+            color: #ffffff;
+        }
+        .lang-select {
+            background: rgba(255, 255, 255, 0.15);
+            color: #fff;
+            border: none;
+            font-size: 0.75rem;
+            padding: 2px 8px;
+            border-radius: 4px;
+            outline: none;
+        }
+        .lang-select option {
+            color: #000;
+        }
+
+        /* Main Header */
+        .main-header {
+            background: #ffffff;
+            padding: 12px 0;
+            border-bottom: 1px solid #edf2f7;
+        }
+        .brand-logo-svg {
+            height: 48px;
+            width: auto;
+        }
+        .search-bar-input {
+            border-radius: 30px 0 0 30px;
+            border: 1px solid #cbd5e1;
+            padding-left: 18px;
+            font-size: 0.9rem;
+        }
+        .search-bar-btn {
+            border-radius: 0 30px 30px 0;
+            background: var(--kent-blue-main);
+            color: #ffffff;
+            border: 1px solid var(--kent-blue-main);
+            padding: 0 20px;
+        }
+        .search-bar-btn:hover {
+            background: var(--kent-blue-dark);
+            color: #ffffff;
+        }
+        .btn-book-demo-header {
+            background: linear-gradient(135deg, var(--kent-orange), #e65100);
+            color: #ffffff;
+            font-weight: 700;
+            border-radius: 25px;
+            padding: 8px 20px;
+            font-size: 0.88rem;
+            border: none;
+            box-shadow: 0 4px 12px rgba(243, 112, 33, 0.3);
+            transition: all 0.3s ease;
+        }
+        .btn-book-demo-header:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(243, 112, 33, 0.45);
+            color: #ffffff;
+        }
+
+        /* Mega Navigation Bar */
+        .navbar-kent {
+            background: var(--kent-blue-main);
+            padding: 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1020;
+        }
+        .navbar-kent .nav-link {
+            color: #ffffff !important;
+            font-weight: 600;
+            font-size: 0.9rem;
+            padding: 14px 18px !important;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            transition: background 0.2s;
+        }
+        .navbar-kent .nav-link:hover, .navbar-kent .nav-link.active {
+            background: rgba(0, 0, 0, 0.15);
+            color: #ffffff !important;
+        }
+        .dropdown-menu-kent {
+            border-radius: 0 0 12px 12px;
+            border: none;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+            padding: 12px 0;
+        }
+        .dropdown-item-kent {
+            font-size: 0.88rem;
+            padding: 8px 24px;
+            font-weight: 500;
+            color: #334155;
+            transition: all 0.2s;
+        }
+        .dropdown-item-kent:hover {
+            background-color: var(--kent-gray-bg);
+            color: var(--kent-blue-main);
+            padding-left: 28px;
+        }
+
+        /* Hero Banner Carousel */
+        .hero-banner-section {
+            background: linear-gradient(135deg, #e6f4fc 0%, #f0f9ff 100%);
+            padding: 40px 0;
+            position: relative;
+        }
+        .hero-title {
+            font-weight: 800;
+            color: var(--kent-blue-dark);
+            font-size: 2.5rem;
+            line-height: 1.2;
+        }
+        .hero-badge {
+            background: rgba(0, 131, 202, 0.12);
+            color: var(--kent-blue-main);
+            font-weight: 700;
+            font-size: 0.85rem;
+            padding: 6px 14px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 12px;
+        }
+        .hero-img-box {
+            text-align: center;
+            padding: 15px;
+        }
+        .hero-img-box img {
+            max-height: 360px;
+            object-fit: contain;
+            filter: drop-shadow(0 15px 25px rgba(0, 51, 102, 0.12));
+        }
+
+        /* Quick Filter Tabs */
+        .filter-section {
+            padding: 35px 0 10px 0;
+        }
+        .section-header-title {
+            font-weight: 800;
+            color: var(--kent-blue-dark);
+            font-size: 2.1rem;
+            text-align: center;
+            position: relative;
+            margin-bottom: 10px;
+        }
+        .section-header-title::after {
+            content: '';
+            display: block;
+            width: 70px;
+            height: 4px;
+            background: var(--kent-orange);
+            margin: 8px auto 0 auto;
+            border-radius: 2px;
+        }
+        .section-header-subtitle {
+            text-align: center;
+            color: #64748b;
+            font-size: 0.98rem;
+            margin-bottom: 30px;
+        }
+
+        .filter-btn {
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            color: #475569;
+            font-weight: 600;
+            font-size: 0.88rem;
+            padding: 10px 22px;
+            border-radius: 30px;
+            margin: 4px;
+            transition: all 0.25s ease;
+        }
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--kent-blue-main);
+            color: #ffffff;
+            border-color: var(--kent-blue-main);
+            box-shadow: 0 4px 12px rgba(0, 131, 202, 0.25);
+        }
+
+        /* Product Cards Grid */
+        .product-card {
+            background: #ffffff;
+            border-radius: 16px;
+            border: 1px solid var(--kent-card-border);
+            transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 32px rgba(0, 51, 102, 0.12);
+            border-color: var(--kent-blue-light);
+        }
+        .product-img-holder {
+            background: #f8fafc;
+            padding: 24px 16px;
+            text-align: center;
+            position: relative;
+            height: 230px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .product-img-holder img {
+            max-height: 185px;
+            max-width: 100%;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+        .product-card:hover .product-img-holder img {
+            transform: scale(1.06);
+        }
+        .badge-tag {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: var(--kent-blue-dark);
+            color: #ffffff;
+            font-size: 0.68rem;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            z-index: 2;
+        }
+        .badge-discount {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: #dc2626;
+            color: #ffffff;
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 4px 8px;
+            border-radius: 6px;
+            z-index: 2;
+        }
+        .product-details {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+        .product-name {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--kent-blue-dark);
+            margin-bottom: 6px;
+            line-height: 1.3;
+        }
+        .tech-pill {
+            display: inline-block;
+            background: #e0f2fe;
+            color: var(--kent-blue-dark);
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 2px 10px;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            width: fit-content;
+        }
+        .spec-list {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 16px;
+            font-size: 0.82rem;
+            color: #475569;
+        }
+        .spec-list li {
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+        }
+        .spec-list li i {
+            color: #16a34a;
+            margin-right: 8px;
+            font-size: 0.85rem;
+        }
+        .price-wrapper {
+            margin-top: auto;
+            padding-top: 12px;
+            border-top: 1px dashed #e2e8f0;
+        }
+        .price-current {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: #0f172a;
+        }
+        .price-mrp {
+            font-size: 0.88rem;
+            text-decoration: line-through;
+            color: #94a3b8;
+            margin-left: 6px;
+        }
+
+        .btn-card-demo {
+            background: #ffffff;
+            color: var(--kent-blue-main);
+            border: 1px solid var(--kent-blue-main);
+            font-weight: 700;
+            font-size: 0.82rem;
+            border-radius: 8px;
+            padding: 8px 12px;
+            transition: all 0.2s;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            width: 100%;
+        }
+        .btn-card-demo:hover {
+            background: #f0f9ff;
+            color: var(--kent-blue-dark);
+            border-color: var(--kent-blue-dark);
+        }
+        .btn-card-wa {
+            background: var(--whatsapp-green);
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 0.82rem;
+            border-radius: 8px;
+            padding: 8px 12px;
+            border: none;
+            transition: all 0.2s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            width: 100%;
+        }
+        .btn-card-wa:hover {
+            background: var(--whatsapp-green-hover);
+            color: #ffffff;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.35);
+        }
+
+        /* Technology & Advantage Highlights */
+        .tech-card {
+            background: #ffffff;
+            border-radius: 14px;
+            padding: 24px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+            border: 1px solid #edf2f7;
+            height: 100%;
+            transition: transform 0.3s ease;
+        }
+        .tech-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0, 131, 202, 0.12);
+        }
+        .tech-icon-circle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: rgba(0, 131, 202, 0.1);
+            color: var(--kent-blue-main);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            margin-bottom: 16px;
+        }
+
+        /* Certifications Grid */
+        .cert-card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 20px 14px;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+            height: 100%;
+        }
+        .cert-card i {
+            font-size: 2rem;
+            color: var(--kent-blue-main);
+            margin-bottom: 10px;
+        }
+
+        /* Floating WhatsApp Chat Button */
+        .floating-wa-box {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            z-index: 9999;
+        }
+        .floating-wa-btn {
+            width: 60px;
+            height: 60px;
+            background: var(--whatsapp-green);
+            color: #ffffff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+        .floating-wa-btn:hover {
+            transform: scale(1.1);
+            color: #ffffff;
+        }
+
+        /* Footer */
+        .footer-kent {
+            background-color: #081a2e;
+            color: #94a3b8;
+            padding-top: 60px;
+            padding-bottom: 30px;
+            font-size: 0.88rem;
+        }
+        .footer-kent h6 {
+            color: #ffffff;
+            font-weight: 700;
+            margin-bottom: 20px;
+            font-size: 1rem;
+            letter-spacing: 0.3px;
+        }
+        .footer-links {
+            list-style: none;
+            padding-left: 0;
+        }
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        .footer-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .footer-links a:hover {
+            color: #ffffff;
+            padding-left: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Utility Bar -->
+    <div class="top-utility-bar">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div class="d-none d-md-flex gap-3">
+                <a href="#partner"><i class="fas fa-handshake me-1"></i> Become a Trade Partner</a>
+                <a href="#service"><i class="fas fa-headset me-1"></i> Customer Service</a>
+                <a href="#locator"><i class="fas fa-map-marker-alt me-1"></i> Dealer Locator</a>
+            </div>
+            <div class="d-flex align-items-center gap-3 ms-auto">
+                <span class="small"><i class="fas fa-globe me-1"></i> Language:</span>
+                <select class="lang-select" aria-label="Select Language">
+                    <option value="en">English</option>
+                    <option value="hi">हिन्दी (Hindi)</option>
+                    <option value="bn">বাংলা (Bengali)</option>
+                    <option value="te">తెలుగు (Telugu)</option>
+                    <option value="ta">தமிழ் (Tamil)</option>
+                    <option value="mr">मराठी (Marathi)</option>
+                </select>
+                <a href="#login" class="ms-2"><i class="fas fa-user-circle me-1"></i> Login / Register</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="container">
+            <div class="row align-items-center g-3">
+                <!-- Logo -->
+                <div class="col-6 col-md-3">
+                    <a href="#" class="d-flex align-items-center text-decoration-none">
+                        <img src="1.jpeg" alt="" style="width: 150px;">
+                           
+                    </a>
+                </div>
+
+                <!-- Search Bar -->
+                <div class="col-12 col-md-5 order-3 order-md-2">
+                    <div class="input-group">
+                        <input type="text" class="form-control search-bar-input" id="searchInput" placeholder="Search RO, UV, Gravity Purifiers, Softeners..." onkeyup="handleSearch()">
+                        <button class="btn search-bar-btn" type="button"><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+
+                <!-- Actions / Call Support / Book Demo -->
+                <div class="col-6 col-md-4 order-2 order-md-3 text-end d-flex align-items-center justify-content-end gap-3">
+                    <div class="d-none d-lg-block text-start">
+                        <small class="text-muted d-block" style="font-size: 0.72rem; line-height: 1;">24x7 Helpline</small>
+                        <a href="tel:+919278992789" class="fw-bold text-dark text-decoration-none" style="font-size: 0.95rem;">+91 9422479515</a>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-kent">
+        <div class="container">
+            <button class="navbar-toggler my-2 text-white border-white" type="button" data-bs-toggle="collapse" data-bs-target="#kentNavbarMenu">
+                <i class="fas fa-bars fs-4"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="kentNavbarMenu">
+                <ul class="navbar-nav me-auto">
+                    <!-- Dropdown: Water Purifiers -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#products" id="waterPurifiersDropdown" role="button" data-bs-toggle="dropdown">
+                             Purifiers Components
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-kent">
+                            <li><a class="dropdown-item dropdown-item-kent" href="#products" onclick="filterCategory('ro')">RO Water Purifiers</a></li>
+                            <li><a class="dropdown-item dropdown-item-kent" href="#products" onclick="filterCategory('alkaline')">Hydrogen & Alkaline Purifiers</a></li>
+                            <li><a class="dropdown-item dropdown-item-kent" href="#products" onclick="filterCategory('uv')">UV Water Purifiers</a></li>
+                            <li><a class="dropdown-item dropdown-item-kent" href="#products" onclick="filterCategory('gravity')">Gravity Purifiers (Non-Electric)</a></li>
+                            <li><a class="dropdown-item dropdown-item-kent" href="#products" onclick="filterCategory('commercial')">Commercial RO Purifiers</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item dropdown-item-kent" href="#technology">Water Softeners for Homes</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item"><a class="nav-link" href="#products" onclick="filterCategory('ro')">RO Purifiers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#products" onclick="filterCategory('alkaline')">Alkaline Water</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#technology">Technology</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#certifications">Certifications</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#why-kent">Why KENT</a></li>
+                </ul>
+                <div class="d-none d-xl-flex align-items-center text-white gap-2">
+                    <i class="fab fa-whatsapp fs-5 text-success"></i>
+                    <a href="https://wa.me/919278992789?text=Hi%20KENT%20Team%2C%20I%20need%20assistance%20with%20water%20purifiers." target="_blank" class="text-white text-decoration-none fw-semibold small">WhatsApp Support</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Banner Carousel Section -->
+    <section class="hero-banner-section" id="hero">
+        <div class="container">
+            <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+                <div class="carousel-inner">
+                    <!-- Slide 1 -->
+                    <div class="carousel-item active">
+                        <div class="row align-items-center">
+                            <div class="col-lg-6">
+                                <span class="hero-badge"><i class="fas fa-crown me-1"></i> India's #1 Most Trusted RO Brand</span>
+                                <h1 class="hero-title mb-3">100% Pure Water with Retained Essential Minerals</h1>
+                                <p class="text-secondary lead mb-4">Patented Mineral RO™ Technology with TDS Controller ensures pure, safe, and delicious drinking water for your family.</p>
+                                <div class="d-flex flex-wrap gap-3">
+                                    <a href="#products" class="btn btn-book-demo-header px-4 py-2 text-uppercase fs-6">Explore Purifiers</a>
+                                    <button class="btn btn-outline-primary rounded-pill px-4 py-2 fw-bold" data-bs-toggle="modal" data-bs-target="#demoModal">
+                                        <i class="fas fa-flask me-1"></i> Free TDS Water Test
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 hero-img-box mt-4 mt-lg-0">
+                                <img src="https://placehold.co/580x360/0083ca/ffffff?text=KENT+Grand+Plus+RO+Purifier" alt="KENT Grand Plus" class="img-fluid rounded-4">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="carousel-item">
+                        <div class="row align-items-center">
+                            <div class="col-lg-6">
+                                <span class="hero-badge"><i class="fas fa-microchip me-1"></i> Next-Gen Smart Purification</span>
+                                <h1 class="hero-title mb-3">IoT Enabled RO Purifiers with Digital Display</h1>
+                                <p class="text-secondary lead mb-4">Real-time water purity, filter life indicators, and auto-service alerts right on your digital screen.</p>
+                                <div class="d-flex flex-wrap gap-3">
+                                    <a href="#products" onclick="filterCategory('ro')" class="btn btn-book-demo-header px-4 py-2 text-uppercase fs-6">View Smart ROs</a>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 hero-img-box mt-4 mt-lg-0">
+                                <img src="https://placehold.co/580x360/003366/ffffff?text=KENT+Prime+Plus+Smart+Digital+RO" alt="KENT Prime Plus" class="img-fluid rounded-4">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div class="carousel-item">
+                        <div class="row align-items-center">
+                            <div class="col-lg-6">
+                                <span class="hero-badge"><i class="fas fa-leaf me-1"></i> Health & Wellness</span>
+                                <h1 class="hero-title mb-3">Alkaline & Hydrogen-Rich Water (pH 8.0 - 9.5)</h1>
+                                <p class="text-secondary lead mb-4">Enhance immunity and maintain optimal body pH balance with KENT's advanced alkaline hydration technology.</p>
+                                <div class="d-flex flex-wrap gap-3">
+                                    <a href="#products" onclick="filterCategory('alkaline')" class="btn btn-book-demo-header px-4 py-2 text-uppercase fs-6">Explore Alkaline Range</a>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 hero-img-box mt-4 mt-lg-0">
+                                <img src="https://placehold.co/580x360/00bcd4/ffffff?text=KENT+Alkaline+Water+Series" alt="KENT Alkaline" class="img-fluid rounded-4">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="carousel-control-prev d-none d-md-block" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev" style="width: 5%;">
+                    <span class="carousel-control-prev-icon bg-dark rounded-circle p-3" aria-hidden="true"></span>
+                </button>
+                <button class="carousel-control-next d-none d-md-block" type="button" data-bs-target="#heroCarousel" data-bs-slide="next" style="width: 5%;">
+                    <span class="carousel-control-next-icon bg-dark rounded-circle p-3" aria-hidden="true"></span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Category Filter Tabs & Products Catalog -->
+    <section class="filter-section" id="products">
+        <div class="container">
+            <h2 class="section-header-title">KENT Water Purifiers Catalog</h2>
+            <p class="section-header-subtitle">Find the perfect purifier engineered for your home's water source and family size</p>
+
+            <!-- Filter Tab Buttons -->
+            <div class="d-flex justify-content-center flex-wrap mb-4" id="categoryFilterContainer">
+                <button class="filter-btn active" onclick="filterCategory('all', this)">All Purifiers</button>
+                <button class="filter-btn" onclick="filterCategory('ro', this)">RO Purifiers</button>
+                <button class="filter-btn" onclick="filterCategory('alkaline', this)">Alkaline & Hydrogen</button>
+                <button class="filter-btn" onclick="filterCategory('uv', this)">UV Purifiers</button>
+                <button class="filter-btn" onclick="filterCategory('gravity', this)">Gravity Non-Electric</button>
+                <button class="filter-btn" onclick="filterCategory('commercial', this)">Commercial Purifiers</button>
+            </div>
+
+            <!-- Products Grid Container -->
+            <div class="row g-4" id="productsGrid">
+                <!-- Dynamically populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Highlights Section -->
+    <section class="py-5 bg-light border-top border-bottom" id="technology">
+        <div class="container">
+            <h2 class="section-header-title">The KENT Advantage</h2>
+            <p class="section-header-subtitle">Patented technologies delivering purity, health, and zero water wastage</p>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="tech-card">
+                        <div class="tech-icon-circle">
+                            <i class="fas fa-vial"></i>
+                        </div>
+                        <h5 class="fw-bold text-dark mb-2">Mineral RO™ Technology</h5>
+                        <p class="text-secondary small mb-0">KENT's patented Mineral RO™ Technology uses a TDS Controller that retains essential natural minerals in purified water, making it 100% pure and healthy.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="tech-card">
+                        <div class="tech-icon-circle">
+                            <i class="fas fa-recycle"></i>
+                        </div>
+                        <h5 class="fw-bold text-dark mb-2">Zero Water Wastage</h5>
+                        <p class="text-secondary small mb-0">Recirculates rejected water back to the overhead tank using its own internal pump, ensuring not a single drop of water is wasted during purification.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="tech-card">
+                        <div class="tech-icon-circle">
+                            <i class="fas fa-shield-virus"></i>
+                        </div>
+                        <h5 class="fw-bold text-dark mb-2">In-Tank UV Disinfection</h5>
+                        <p class="text-secondary small mb-0">Keeps purified water in the storage tank free from microbial contamination for long durations with automatic LED UV light protection.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="tech-card">
+                        <div class="tech-icon-circle">
+                            <i class="fas fa-tv"></i>
+                        </div>
+                        <h5 class="fw-bold text-dark mb-2">Digital Display & IoT</h5>
+                        <p class="text-secondary small mb-0">Real-time status display showing water purity, filter life indicator, RO flow rate, and auto-fault alerts on an interactive screen.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="tech-card">
+                        <div class="tech-icon-circle">
+                            <i class="fas fa-box-archive"></i>
+                        </div>
+                        <h5 class="fw-bold text-dark mb-2">Stainless Steel Storage</h5>
+                        <p class="text-secondary small mb-0">Selected models feature high-grade food stainless steel storage tanks preventing bacterial growth and maintaining purity.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="tech-card">
+                        <div class="tech-icon-circle">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <h5 class="fw-bold text-dark mb-2">Multiple Purification</h5>
+                        <p class="text-secondary small mb-0">Combines RO + UV + UF + TDS Control + In-Tank UV to eliminate dissolved impurities like heavy metals, arsenic, pesticides, and germs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications & Awards -->
+    <section class="py-5 bg-white" id="certifications">
+        <div class="container">
+            <h2 class="section-header-title">Tested & Globally Certified</h2>
+            <p class="section-header-subtitle">KENT Purifiers hold global quality certifications for safety and performance</p>
+
+            <div class="row g-3 text-center">
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="cert-card">
+                        <i class="fas fa-award"></i>
+                        <h6 class="fw-bold text-dark mb-1">NSF USA</h6>
+                        <small class="text-muted d-block">NSF/ANSI 58 Standard</small>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="cert-card">
+                        <i class="fas fa-check-circle"></i>
+                        <h6 class="fw-bold text-dark mb-1">BIS / ISI</h6>
+                        <small class="text-muted d-block">IS 14543 Certified</small>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="cert-card">
+                        <i class="fas fa-globe"></i>
+                        <h6 class="fw-bold text-dark mb-1">CE Mark</h6>
+                        <small class="text-muted d-block">European Conformity</small>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="cert-card">
+                        <i class="fas fa-leaf"></i>
+                        <h6 class="fw-bold text-dark mb-1">RoHS</h6>
+                        <small class="text-muted d-block">Hazardous Free</small>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="cert-card">
+                        <i class="fas fa-shield-alt"></i>
+                        <h6 class="fw-bold text-dark mb-1">TÜV SÜD</h6>
+                        <small class="text-muted d-block">Tested Safe Water</small>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="cert-card">
+                        <i class="fas fa-trophy"></i>
+                        <h6 class="fw-bold text-dark mb-1">Water Digest</h6>
+                        <small class="text-muted d-block">Best RO Award</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose KENT -->
+    <section class="py-5 bg-light border-top" id="why-kent">
+        <div class="container">
+            <h2 class="section-header-title">Why Choose KENT?</h2>
+            <p class="section-header-subtitle">Trusted by over 50 Lakh happy families across India</p>
+
+            <div class="row g-4 text-center">
+                <div class="col-md-3">
+                    <div class="p-4 border rounded-4 bg-white h-100 shadow-sm">
+                        <h2 class="fw-extrabold text-primary display-5 mb-2">25+</h2>
+                        <h6 class="fw-bold text-dark">Years of Purity</h6>
+                        <p class="text-muted small mb-0">Leader in water purification innovation in India.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="p-4 border rounded-4 bg-white h-100 shadow-sm">
+                        <h2 class="fw-extrabold text-primary display-5 mb-2">50L+</h2>
+                        <h6 class="fw-bold text-dark">Happy Families</h6>
+                        <p class="text-muted small mb-0">Providing clean drinking water to millions daily.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="p-4 border rounded-4 bg-white h-100 shadow-sm">
+                        <h2 class="fw-extrabold text-primary display-5 mb-2">1500+</h2>
+                        <h6 class="fw-bold text-dark">Service Centers</h6>
+                        <p class="text-muted small mb-0">Pan-India network for fast door-step service.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="p-4 border rounded-4 bg-white h-100 shadow-sm">
+                        <h2 class="fw-extrabold text-primary display-5 mb-2">100%</h2>
+                        <h6 class="fw-bold text-dark">Pure Water Guarantee</h6>
+                        <p class="text-muted small mb-0">Comprehensive multi-stage purification technology.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Free Demo Modal -->
+    <div class="modal fade" id="demoModal" tabindex="-1" aria-labelledby="demoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow-lg rounded-4">
+                <div class="modal-header text-white" style="background: var(--kent-blue-dark); border-radius: 16px 16px 0 0;">
+                    <h5 class="modal-header-title fw-bold m-0" id="demoModalLabel"><i class="fas fa-vial me-2"></i> Book Free Home Demo & TDS Test</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <p class="text-muted small mb-3">Fill out your details below to schedule a free water TDS test and live demo at your doorstep via WhatsApp.</p>
+                    <form id="modalDemoForm" onsubmit="submitModalDemo(event)">
+                        <div class="row g-2 mb-2">
+                            <div class="col-6">
+                                <label class="form-label small fw-semibold mb-1">First Name *</label>
+                                <input type="text" id="mFirstName" class="form-control" required placeholder="John">
+                            </div>
+                            <div class="col-6">
+                                <label class="form-label small fw-semibold mb-1">Last Name *</label>
+                                <input type="text" id="mLastName" class="form-control" required placeholder="Doe">
+                            </div>
+                        </div>
+                        <div class="mb-2">
+                            <label class="form-label small fw-semibold mb-1">Mobile Number *</label>
+                            <input type="tel" id="mMobile" class="form-control" pattern="[0-9]{10}" required placeholder="10-digit mobile number">
+                        </div>
+                        <div class="row g-2 mb-2">
+                            <div class="col-6">
+                                <label class="form-label small fw-semibold mb-1">City *</label>
+                                <input type="text" id="mCity" class="form-control" required placeholder="Mumbai / Delhi">
+                            </div>
+                            <div class="col-6">
+                                <label class="form-label small fw-semibold mb-1">Pincode *</label>
+                                <input type="text" id="mPincode" class="form-control" required placeholder="400001">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label small fw-semibold mb-1">Selected Product (Optional)</label>
+                            <input type="text" id="mSelectedProduct" class="form-control bg-light" readonly value="General Inquiry / Home Demo">
+                        </div>
+                        <button type="submit" class="btn btn-card-wa py-2.5 fs-6 w-100">
+                            <i class="fab fa-whatsapp me-2 fs-5"></i> Send Request on WhatsApp
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating WhatsApp Button -->
+    <div class="floating-wa-box">
+        <a href="https://wa.me/919278992789?text=Hello%20KENT%20RO%20Team%2C%20I%20am%20interested%20in%20buying%20a%20water%20purifier.%20Please%20guide%20me." target="_blank" class="floating-wa-btn" title="Chat on WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-kent">
+        <div class="container">
+            <div class="row g-4 mb-5">
+                <div class="col-lg-4">
+                    <h5 class="text-white fw-bold mb-3">KENT RO Systems Ltd.</h5>
+                    <p class="text-muted small mb-4">House of Purity — India's premier manufacturer of water purifiers, kitchen appliances, vacuum cleaners, and water softeners.</p>
+                    <div class="d-flex gap-2">
+                        <a href="#" class="btn btn-sm btn-outline-light rounded-circle" style="width:36px; height:36px;"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="btn btn-sm btn-outline-light rounded-circle" style="width:36px; height:36px;"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="btn btn-sm btn-outline-light rounded-circle" style="width:36px; height:36px;"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="btn btn-sm btn-outline-light rounded-circle" style="width:36px; height:36px;"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-6 col-lg-2">
+                    <h6>Product Categories</h6>
+                    <ul class="footer-links">
+                        <li><a href="#products" onclick="filterCategory('ro')">RO Purifiers</a></li>
+                        <li><a href="#products" onclick="filterCategory('alkaline')">Alkaline Purifiers</a></li>
+                        <li><a href="#products" onclick="filterCategory('uv')">UV Water Purifiers</a></li>
+                        <li><a href="#products" onclick="filterCategory('gravity')">Gravity Purifiers</a></li>
+                        <li><a href="#products" onclick="filterCategory('commercial')">Commercial RO</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-lg-2">
+                    <h6>Quick Services</h6>
+                    <ul class="footer-links">
+                        <li><a href="#" data-bs-toggle="modal" data-bs-target="#demoModal">Book Free Demo</a></li>
+                        <li><a href="#">Track Service Request</a></li>
+                        <li><a href="#">Register Warranty</a></li>
+                        <li><a href="#">AMC Plans</a></li>
+                        <li><a href="#">Find Dealer Near Me</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4">
+                    <h6>Corporate Head Office</h6>
+                    <p class="text-muted small mb-1"><i class="fas fa-map-marker-alt me-2 text-primary"></i> E-6, 7 & 8, Sector 59, Noida, U.P. - 201 309, India</p>
+                    <p class="text-muted small mb-1"><i class="fas fa-phone me-2 text-primary"></i> Toll Free: 1800 100 1000 / +91 92789 92789</p>
+                    <p class="text-muted small mb-0"><i class="fas fa-envelope me-2 text-primary"></i> sales@kent.co.in</p>
+                </div>
+            </div>
+
+            <hr class="border-secondary opacity-25">
+            <div class="d-md-flex justify-content-between align-items-center text-center text-md-start pt-3">
+                <p class="mb-0 small text-muted">&copy; 2026 KENT RO Systems Ltd. All rights reserved.</p>
+                <div class="small text-muted mt-2 mt-md-0">
+                    <a href="#" class="text-muted me-3 text-decoration-none">Privacy Policy</a>
+                    <a href="#" class="text-muted me-3 text-decoration-none">Terms of Service</a>
+                    <a href="#" class="text-muted text-decoration-none">Disclaimer</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // KENT Products Database
+        const kentProducts = [
+            {
+                id: 'kent-grand-plus',
+                category: 'ro',
+                tag: 'BEST SELLER',
+                title: 'KENT Grand Plus RO + UV + UF + TDS',
+                tech: 'Mineral RO™ + Zero Wastage',
+                capacity: '9 Litres Storage | 20 L/hr',
+                source: 'Suitable for Borewell, Tanker & Tap Water',
+                mrp: '₹22,500',
+                price: '₹18,950',
+                discount: '15% OFF',
+                img: 'https://placehold.co/400x350/0083ca/ffffff?text=KENT+Grand+Plus',
+                bullets: ['Zero Water Wastage Technology', 'In-Tank UV Disinfection', 'TDS Control System']
+            },
+            {
+                id: 'kent-prime-plus',
+                category: 'ro',
+                tag: 'IoT ENABLED',
+                title: 'KENT Prime Plus Smart Digital RO',
+                tech: 'Digital Screen + RO + UV',
+                capacity: '9 Litres Storage | 20 L/hr',
+                source: 'Suitable for All Water Sources',
+                mrp: '₹24,000',
+                price: '₹20,490',
+                discount: '14% OFF',
+                img: 'https://placehold.co/400x350/003366/ffffff?text=KENT+Prime+Plus',
+                bullets: ['Real-Time Water Purity Display', 'Filter Life Indicator', 'Mineral RO Technology']
+            },
+            {
+                id: 'kent-alkaline-ionizer',
+                category: 'alkaline',
+                tag: 'HEALTH BOOST',
+                title: 'KENT Alkaline Water Ionizer',
+                tech: 'pH 8.0 - 9.5 Alkaline',
+                capacity: 'Continuous Flow Ionizer',
+                source: 'Municipal / Purified Water Source',
+                mrp: '₹35,000',
+                price: '₹29,900',
+                discount: '14% OFF',
+                img: 'https://placehold.co/400x350/00bcd4/ffffff?text=KENT+Alkaline+Ionizer',
+                bullets: ['Provides Hydrogen-Rich Water', 'Multi-plate Platinum Coated Titanium', 'Neutralizes Body Acidity']
+            },
+            {
+                id: 'kent-pearl',
+                category: 'ro',
+                tag: 'DETACHABLE TANK',
+                title: 'KENT Pearl Detachable Tank RO',
+                tech: 'RO + UV + UF + TDS',
+                capacity: '8 Litres Storage | 20 L/hr',
+                source: 'Borewell & High TDS Water',
+                mrp: '₹21,000',
+                price: '₹17,800',
+                discount: '15% OFF',
+                img: 'https://placehold.co/400x350/0083ca/ffffff?text=KENT+Pearl+RO',
+                bullets: ['Easy Wash Detachable Tank', 'Auto-On/Off Operation', '100% Pure Drinking Water']
+            },
+            {
+                id: 'kent-maxx',
+                category: 'uv',
+                tag: 'TAP WATER',
+                title: 'KENT Maxx UV + UF Water Purifier',
+                tech: 'UV Disinfection + UF Membrane',
+                capacity: '7 Litres Storage | 60 L/hr',
+                source: 'Suitable for Tap / Municipal Water',
+                mrp: '₹11,500',
+                price: '₹9,450',
+                discount: '18% OFF',
+                img: 'https://placehold.co/400x350/00a3e0/ffffff?text=KENT+Maxx+UV',
+                bullets: ['Detachable Transparent Storage Tank', 'Computer Controlled Operation', 'High Power 11W UV Lamp']
+            },
+            {
+                id: 'kent-gold-optima',
+                category: 'gravity',
+                tag: 'NO ELECTRICITY',
+                title: 'KENT Gold Optima Gravity Purifier',
+                tech: 'Hollow Fiber UF Membrane',
+                capacity: '10 Litres Storage',
+                source: 'Low TDS Tap Water',
+                mrp: '₹3,200',
+                price: '₹2,650',
+                discount: '17% OFF',
+                img: 'https://placehold.co/400x350/64748b/ffffff?text=KENT+Gold+Optima',
+                bullets: ['Works without Electricity', 'Chemical-Free Purification', 'Food Grade Plastic Body']
+            },
+            {
+                id: 'kent-elite-25',
+                category: 'commercial',
+                tag: 'COMMERCIAL',
+                title: 'KENT Elite 25 Commercial RO',
+                tech: 'Double RO Membrane System',
+                capacity: '25 Litres/hr Purification',
+                source: 'Offices, Restaurants & Schools',
+                mrp: '₹42,000',
+                price: '₹36,500',
+                discount: '13% OFF',
+                img: 'https://placehold.co/400x350/003366/ffffff?text=KENT+Elite+25+Commercial',
+                bullets: ['High Capacity Commercial RO', 'Dual Hydrostatic Tank Support', 'Heavy Duty Frame']
+            },
+            {
+                id: 'kent-ultra-storage',
+                category: 'uv',
+                tag: 'UV + STORAGE',
+                title: 'KENT Ultra Storage UV Purifier',
+                tech: 'UV + UF Dual Purification',
+                capacity: '8 Litres Storage | 60 L/hr',
+                source: 'Low TDS Municipal Supply',
+                mrp: '₹10,500',
+                price: '₹8,900',
+                discount: '15% OFF',
+                img: 'https://placehold.co/400x350/0083ca/ffffff?text=KENT+Ultra+Storage',
+                bullets: ['Fully Automatic Operation', 'In-built Storage Tank', 'Fail-Safe UV Alarm']
+            }
+        ];
+
+        // Function to render product cards
+        function renderProductsGrid(products) {
+            const grid = document.getElementById('productsGrid');
+            grid.innerHTML = '';
+
+            if (products.length === 0) {
+                grid.innerHTML = `
+                    <div class="col-12 text-center py-5">
+                        <i class="fas fa-search-minus text-muted fs-1 mb-3"></i>
+                        <h5 class="text-muted">No purifiers found matching your search or category filter.</h5>
+                    </div>
+                `;
+                return;
+            }
+
+            products.forEach(p => {
+                // Build Direct WhatsApp Chat Text
+                const waText = encodeURIComponent(
+                    `Hello KENT RO Team,\n\nI want to buy / inquire about this water purifier:\n` +
+                    `*Model:* ${p.title}\n` +
+                    `*Offer Price:* ${p.price} (MRP: ${p.mrp})\n` +
+                    `*Technology:* ${p.tech}\n` +
+                    `*Capacity:* ${p.capacity}\n` +
+                    `*Water Source:* ${p.source}\n\n` +
+                    `Please share details about availability and free doorstep installation!`
+                );
+                const waUrl = `https://wa.me/919278992789?text=${waText}`;
+
+                const cardHTML = `
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="product-card">
+                            <div class="product-img-holder">
+                                <span class="badge-tag">${p.tag}</span>
+                                <span class="badge-discount">${p.discount}</span>
+                                <img src="${p.img}" alt="${p.title}" loading="lazy">
+                            </div>
+                            <div class="product-details">
+                                <span class="tech-pill">${p.tech}</span>
+                                <h5 class="product-name">${p.title}</h5>
+                                <p class="text-muted small mb-2"><i class="fas fa-tint text-primary me-1"></i> ${p.capacity}</p>
+                                <ul class="spec-list">
+                                    ${p.bullets.map(b => `<li><i class="fas fa-check-circle"></i> ${b}</li>`).join('')}
+                                </ul>
+                                <div class="price-wrapper">
+                                    <div class="d-flex align-items-baseline mb-3">
+                                        <span class="price-current">${p.price}</span>
+                                        <span class="price-mrp">${p.mrp}</span>
+                                    </div>
+                                    <div class="d-flex flex-column gap-2">
+                                        <button class="btn btn-card-demo" onclick="openDemoModalForProduct('${p.title}')">
+                                            <i class="fas fa-flask me-1"></i> Book Free Demo
+                                        </button>
+                                        <a href="${waUrl}" target="_blank" class="btn btn-card-wa">
+                                            <i class="fab fa-whatsapp fs-5"></i> Buy / Chat on WhatsApp
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                grid.innerHTML += cardHTML;
+            });
+        }
+
+        // Category Filtering Function
+        function filterCategory(cat, btnElement) {
+            // Update active state on buttons
+            if (btnElement) {
+                const btns = document.querySelectorAll('.filter-btn');
+                btns.forEach(b => b.classList.remove('active'));
+                btnElement.classList.add('active');
+            }
+
+            if (cat === 'all') {
+                renderProductsGrid(kentProducts);
+            } else {
+                const filtered = kentProducts.filter(p => p.category === cat);
+                renderProductsGrid(filtered);
+            }
+        }
+
+        // Search Input Handling
+        function handleSearch() {
+            const query = document.getElementById('searchInput').value.toLowerCase().trim();
+            const filtered = kentProducts.filter(p => 
+                p.title.toLowerCase().includes(query) || 
+                p.tech.toLowerCase().includes(query) ||
+                p.category.toLowerCase().includes(query)
+            );
+            renderProductsGrid(filtered);
+        }
+
+        // Open Modal pre-filled with Product Name
+        function openDemoModalForProduct(productName) {
+            document.getElementById('mSelectedProduct').value = productName;
+            const demoModal = new bootstrap.Modal(document.getElementById('demoModal'));
+            demoModal.show();
+        }
+
+        // Submit Modal Request via WhatsApp
+        function submitModalDemo(e) {
+            e.preventDefault();
+            const fn = document.getElementById('mFirstName').value;
+            const ln = document.getElementById('mLastName').value;
+            const mob = document.getElementById('mMobile').value;
+            const city = document.getElementById('mCity').value;
+            const pin = document.getElementById('mPincode').value;
+            const prod = document.getElementById('mSelectedProduct').value;
+
+            const msg = encodeURIComponent(
+                `*FREE HOME DEMO & TDS TEST REQUEST*\n\n` +
+                `*Customer:* ${fn} ${ln}\n` +
+                `*Mobile:* ${mob}\n` +
+                `*City:* ${city} (${pin})\n` +
+                `*Product Interested:* ${prod}\n\n` +
+                `Please contact me to confirm demo schedule!`
+            );
+
+            window.open(`https://wa.me/919278992789?text=${msg}`, '_blank');
+        }
+
+        // Initial Load
+        document.addEventListener('DOMContentLoaded', () => {
+            renderProductsGrid(kentProducts);
+        });
+    </script>
+</body>
+</html>
