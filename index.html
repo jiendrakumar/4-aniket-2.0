@@ -1,846 +1,963 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AquaScotch Water Purifiers - House of Purity | Mineral RO, UV, Gravity Purifiers</title>
+    <title>AquaScotch | Water Purifier Components & Appliances</title>
 
-    <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- FontAwesome 6 Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Font: Inter & Roboto -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            --Aquascotch-blue-dark: #003366;
-            --Aquascotch-blue-main: #0083ca;
-            --Aquascotch-blue-light: #00a3e0;
-            --Aquascotch-cyan: #00bcd4;
-            --Aquascotch-orange: #f37021;
-            --Aquascotch-orange-hover: #d95e12;
-            --Aquascotch-gray-bg: #f4f6f9;
-            --Aquascotch-dark-text: #1d2939;
-            --Aquascotch-card-border: #e2e8f0;
-            --whatsapp-green: #25d366;
-            --whatsapp-green-hover: #1eb854;
+            --blue-dark: #003366;
+            --blue: #0083ca;
+            --blue-light: #00a3e0;
+            --orange: #f37021;
+            --bg: #f4f6f9;
+            --border: #e2e8f0;
+            --green: #25d366;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
         }
 
         body {
             font-family: 'Inter', sans-serif;
-            color: var(--Aquascotch-dark-text);
-            background-color: #ffffff;
+            color: #1d2939;
+            background: #fff;
             overflow-x: hidden;
         }
 
-        /* Top Bar Utilities */
-        .top-utility-bar {
-            background-color: var(--Aquascotch-blue-dark);
-            color: #ffffff;
-            font-size: 0.78rem;
-            padding: 5px 0;
-        }
-        .top-utility-bar a {
-            color: #d0e4f7;
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-        .top-utility-bar a:hover {
-            color: #ffffff;
-        }
-        .lang-select {
-            background: rgba(255, 255, 255, 0.15);
-            color: #fff;
-            border: none;
-            font-size: 0.75rem;
-            padding: 2px 8px;
-            border-radius: 4px;
-            outline: none;
-        }
-        .lang-select option {
-            color: #000;
+        img {
+            max-width: 100%;
         }
 
-        /* Main Header */
+        a {
+            transition: .2s ease;
+        }
+
+        .top-utility-bar {
+            background: var(--blue-dark);
+            color: white;
+            padding: 7px 0;
+            font-size: 12px;
+        }
+
         .main-header {
-            background: #ffffff;
-            padding: 12px 0;
+            background: white;
+            padding: 14px 0;
             border-bottom: 1px solid #edf2f7;
         }
-        .brand-logo-svg {
-            height: 48px;
-            width: auto;
-        }
-        .search-bar-input {
-            border-radius: 30px 0 0 30px;
-            border: 1px solid #cbd5e1;
-            padding-left: 18px;
-            font-size: 0.9rem;
-        }
-        .search-bar-btn {
-            border-radius: 0 30px 30px 0;
-            background: var(--Aquascotch-blue-main);
-            color: #ffffff;
-            border: 1px solid var(--Aquascotch-blue-main);
-            padding: 0 20px;
-        }
-        .search-bar-btn:hover {
-            background: var(--Aquascotch-blue-dark);
-            color: #ffffff;
-        }
-        .btn-book-demo-header {
-            background: linear-gradient(135deg, var(--Aquascotch-orange), #e65100);
-            color: #ffffff;
-            font-weight: 700;
-            border-radius: 25px;
-            padding: 8px 20px;
-            font-size: 0.88rem;
-            border: none;
-            box-shadow: 0 4px 12px rgba(243, 112, 33, 0.3);
-            transition: all 0.3s ease;
-        }
-        .btn-book-demo-header:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(243, 112, 33, 0.45);
-            color: #ffffff;
+
+        .brand-logo {
+            width: 150px;
+            height: auto;
+            object-fit: contain;
         }
 
-        /* Mega Navigation Bar */
+        .search-bar-input {
+            border: 1px solid #cbd5e1;
+            border-radius: 30px 0 0 30px;
+            padding: 11px 18px;
+            min-width: 0;
+        }
+
+        .search-bar-btn {
+            background: var(--blue);
+            color: white;
+            border: 1px solid var(--blue);
+            border-radius: 0 30px 30px 0;
+            padding: 0 20px;
+        }
+
+        .search-bar-btn:hover {
+            background: var(--blue-dark);
+            color: white;
+        }
+
         .navbar-Aquascotch {
-            background: var(--Aquascotch-blue-main);
+            background: var(--blue);
             padding: 0;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
             position: sticky;
             top: 0;
             z-index: 1020;
-        }
-        .navbar-Aquascotch .nav-link {
-            color: #ffffff !important;
-            font-weight: 600;
-            font-size: 0.9rem;
-            padding: 14px 18px !important;
-            text-transform: uppercase;
-            letter-spacing: 0.3px;
-            transition: background 0.2s;
-        }
-        .navbar-Aquascotch .nav-link:hover, .navbar-Aquascotch .nav-link.active {
-            background: rgba(0, 0, 0, 0.15);
-            color: #ffffff !important;
-        }
-        .dropdown-menu-Aquascotch {
-            border-radius: 0 0 12px 12px;
-            border: none;
-            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
-            padding: 12px 0;
-        }
-        .dropdown-item-Aquascotch {
-            font-size: 0.88rem;
-            padding: 8px 24px;
-            font-weight: 500;
-            color: #334155;
-            transition: all 0.2s;
-        }
-        .dropdown-item-Aquascotch:hover {
-            background-color: var(--Aquascotch-gray-bg);
-            color: var(--Aquascotch-blue-main);
-            padding-left: 28px;
+            box-shadow: 0 4px 12px #00000012;
         }
 
-        /* Hero Banner Carousel */
-        .hero-banner-section {
-            background: linear-gradient(135deg, #e6f4fc 0%, #f0f9ff 100%);
-            padding: 40px 0;
-            position: relative;
+        .navbar-Aquascotch .nav-link {
+            color: white !important;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 15px 13px !important;
         }
+
+        .navbar-Aquascotch .nav-link:hover,
+        .navbar-Aquascotch .nav-link.active {
+            background: #00000020;
+        }
+
+        .dropdown-menu-Aquascotch {
+            border: 0;
+            border-radius: 0 0 12px 12px;
+            box-shadow: 0 12px 28px #00000020;
+            padding: 10px 0;
+        }
+
+        .dropdown-item-Aquascotch {
+            padding: 9px 20px;
+            font-size: 13px;
+        }
+
+        .dropdown-item-Aquascotch:hover {
+            color: var(--blue);
+            background: var(--bg);
+        }
+
+        .hero-banner-section {
+            background: linear-gradient(135deg, #e6f4fc, #f0f9ff);
+            padding: 45px 0;
+        }
+
         .hero-title {
+            color: var(--blue-dark);
             font-weight: 800;
-            color: var(--Aquascotch-blue-dark);
-            font-size: 2.5rem;
+            font-size: clamp(27px, 3vw, 40px);
             line-height: 1.2;
         }
+
         .hero-badge {
-            background: rgba(0, 131, 202, 0.12);
-            color: var(--Aquascotch-blue-main);
-            font-weight: 700;
-            font-size: 0.85rem;
-            padding: 6px 14px;
-            border-radius: 20px;
             display: inline-block;
+            background: #0083ca18;
+            color: var(--blue);
+            padding: 7px 13px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 700;
             margin-bottom: 12px;
         }
+
         .hero-img-box {
-            text-align: center;
-            padding: 15px;
-        }
-        .hero-img-box img {
-            max-height: 360px;
-            object-fit: contain;
-            filter: drop-shadow(0 15px 25px rgba(0, 51, 102, 0.12));
+            height: 350px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        /* Quick Filter Tabs */
-        .filter-section {
-            padding: 35px 0 10px 0;
+        .hero-img-box img {
+            max-height: 330px;
+            width: 100%;
+            object-fit: contain;
+            filter: drop-shadow(0 12px 20px #00336615);
         }
+
+        .btn-book-demo-header {
+            background: linear-gradient(135deg, var(--orange), #e65100);
+            color: white;
+            font-weight: 700;
+            border: 0;
+            border-radius: 30px;
+            padding: 10px 20px;
+        }
+
+        .btn-book-demo-header:hover {
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .filter-section {
+            padding: 40px 0;
+        }
+
         .section-header-title {
-            font-weight: 800;
-            color: var(--Aquascotch-blue-dark);
-            font-size: 2.1rem;
+            color: var(--blue-dark);
             text-align: center;
-            position: relative;
+            font-weight: 800;
+            font-size: clamp(24px, 3vw, 32px);
             margin-bottom: 10px;
         }
+
         .section-header-title::after {
-            content: '';
+            content: "";
             display: block;
-            width: 70px;
+            width: 65px;
             height: 4px;
-            background: var(--Aquascotch-orange);
-            margin: 8px auto 0 auto;
-            border-radius: 2px;
+            background: var(--orange);
+            margin: 10px auto 0;
+            border-radius: 3px;
         }
+
         .section-header-subtitle {
             text-align: center;
             color: #64748b;
-            font-size: 0.98rem;
-            margin-bottom: 30px;
+            font-size: 14px;
+            margin-bottom: 28px;
         }
 
         .filter-btn {
-            background: #ffffff;
-            border: 1px solid #cbd5e1;
+            background: white;
             color: #475569;
-            font-weight: 600;
-            font-size: 0.88rem;
-            padding: 10px 22px;
+            border: 1px solid #cbd5e1;
             border-radius: 30px;
+            padding: 9px 17px;
             margin: 4px;
-            transition: all 0.25s ease;
-        }
-        .filter-btn:hover, .filter-btn.active {
-            background: var(--Aquascotch-blue-main);
-            color: #ffffff;
-            border-color: var(--Aquascotch-blue-main);
-            box-shadow: 0 4px 12px rgba(0, 131, 202, 0.25);
+            font-size: 13px;
+            font-weight: 600;
         }
 
-        /* Product Cards Grid */
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--blue);
+            color: white;
+            border-color: var(--blue);
+            box-shadow: 0 4px 12px #0083ca30;
+        }
+
         .product-card {
-            background: #ffffff;
-            border-radius: 16px;
-            border: 1px solid var(--Aquascotch-card-border);
-            transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 14px;
             height: 100%;
             display: flex;
             flex-direction: column;
-            position: relative;
             overflow: hidden;
+            transition: .3s ease;
         }
+
         .product-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 16px 32px rgba(0, 51, 102, 0.12);
-            border-color: var(--Aquascotch-blue-light);
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px #00336615;
+            border-color: var(--blue-light);
         }
+
         .product-img-holder {
+            height: 220px;
+            padding: 20px;
             background: #f8fafc;
-            padding: 24px 16px;
-            text-align: center;
             position: relative;
-            height: 230px;
             display: flex;
-            align-items: center;
             justify-content: center;
+            align-items: center;
         }
+
         .product-img-holder img {
-            max-height: 185px;
+            max-height: 175px;
             max-width: 100%;
             object-fit: contain;
-            transition: transform 0.3s ease;
+            transition: transform .3s;
         }
+
         .product-card:hover .product-img-holder img {
-            transform: scale(1.06);
+            transform: scale(1.05);
         }
-        .badge-tag {
-            position: absolute;
-            top: 12px;
-            left: 12px;
-            background: var(--Aquascotch-blue-dark);
-            color: #ffffff;
-            font-size: 0.68rem;
-            font-weight: 700;
-            padding: 4px 10px;
-            border-radius: 12px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            z-index: 2;
-        }
+
+        .badge-tag,
         .badge-discount {
             position: absolute;
-            top: 12px;
-            right: 12px;
-            background: #dc2626;
-            color: #ffffff;
-            font-size: 0.72rem;
+            top: 10px;
+            font-size: 10px;
             font-weight: 700;
-            padding: 4px 8px;
+            padding: 5px 8px;
             border-radius: 6px;
-            z-index: 2;
+            z-index: 1;
         }
+
+        .badge-tag {
+            left: 10px;
+            background: var(--blue-dark);
+            color: white;
+        }
+
+        .badge-discount {
+            right: 10px;
+            background: #dc2626;
+            color: white;
+        }
+
         .product-details {
-            padding: 20px;
+            padding: 18px;
             display: flex;
             flex-direction: column;
-            flex-grow: 1;
+            flex: 1;
         }
+
         .product-name {
+            color: var(--blue-dark);
+            font-size: 16px;
             font-weight: 700;
-            font-size: 1.1rem;
-            color: var(--Aquascotch-blue-dark);
-            margin-bottom: 6px;
-            line-height: 1.3;
+            line-height: 1.4;
+            margin-bottom: 8px;
         }
+
         .tech-pill {
             display: inline-block;
+            align-self: flex-start;
             background: #e0f2fe;
-            color: var(--Aquascotch-blue-dark);
-            font-size: 0.75rem;
+            color: var(--blue-dark);
+            font-size: 11px;
             font-weight: 700;
-            padding: 2px 10px;
-            border-radius: 12px;
-            margin-bottom: 12px;
-            width: fit-content;
+            padding: 5px 9px;
+            border-radius: 15px;
+            margin-bottom: 10px;
         }
+
         .spec-list {
             list-style: none;
-            padding-left: 0;
-            margin-bottom: 16px;
-            font-size: 0.82rem;
+            padding: 0;
+            margin: 8px 0 16px;
             color: #475569;
+            font-size: 12px;
         }
+
         .spec-list li {
-            margin-bottom: 5px;
-            display: flex;
-            align-items: center;
+            margin-bottom: 7px;
+            line-height: 1.5;
         }
-        .spec-list li i {
+
+        .spec-list i {
             color: #16a34a;
-            margin-right: 8px;
-            font-size: 0.85rem;
+            margin-right: 7px;
         }
+
         .price-wrapper {
             margin-top: auto;
-            padding-top: 12px;
-            border-top: 1px dashed #e2e8f0;
+            padding-top: 13px;
+            border-top: 1px dashed var(--border);
         }
+
         .price-current {
-            font-size: 1.3rem;
+            font-size: 21px;
             font-weight: 800;
             color: #0f172a;
         }
+
         .price-mrp {
-            font-size: 0.88rem;
-            text-decoration: line-through;
+            font-size: 13px;
             color: #94a3b8;
-            margin-left: 6px;
+            text-decoration: line-through;
+            margin-left: 7px;
+        }
+
+        .btn-card-demo,
+        .btn-card-wa {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 7px;
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 700;
+            text-decoration: none;
         }
 
         .btn-card-demo {
-            background: #ffffff;
-            color: var(--Aquascotch-blue-main);
-            border: 1px solid var(--Aquascotch-blue-main);
-            font-weight: 700;
-            font-size: 0.82rem;
-            border-radius: 8px;
-            padding: 8px 12px;
-            transition: all 0.2s;
-            text-decoration: none;
-            display: inline-block;
-            text-align: center;
-            width: 100%;
-        }
-        .btn-card-demo:hover {
-            background: #f0f9ff;
-            color: var(--Aquascotch-blue-dark);
-            border-color: var(--Aquascotch-blue-dark);
-        }
-        .btn-card-wa {
-            background: var(--whatsapp-green);
-            color: #ffffff;
-            font-weight: 700;
-            font-size: 0.82rem;
-            border-radius: 8px;
-            padding: 8px 12px;
-            border: none;
-            transition: all 0.2s;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 6px;
-            width: 100%;
-        }
-        .btn-card-wa:hover {
-            background: var(--whatsapp-green-hover);
-            color: #ffffff;
-            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.35);
+            border: 1px solid var(--blue);
+            background: white;
+            color: var(--blue);
         }
 
-        /* Technology & Advantage Highlights */
+        .btn-card-demo:hover {
+            background: #eff9ff;
+            color: var(--blue-dark);
+        }
+
+        .btn-card-wa {
+            background: var(--green);
+            color: white;
+            border: 0;
+        }
+
+        .btn-card-wa:hover {
+            background: #1eb854;
+            color: white;
+        }
+
         .tech-card {
-            background: #ffffff;
-            border-radius: 14px;
-            padding: 24px;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
-            border: 1px solid #edf2f7;
             height: 100%;
-            transition: transform 0.3s ease;
+            padding: 24px;
+            background: white;
+            border: 1px solid #edf2f7;
+            border-radius: 14px;
+            transition: .3s;
         }
+
         .tech-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 24px rgba(0, 131, 202, 0.12);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px #0083ca18;
         }
+
         .tech-icon-circle {
-            width: 60px;
-            height: 60px;
+            width: 55px;
+            height: 55px;
+            background: #0083ca15;
+            color: var(--blue);
             border-radius: 50%;
-            background: rgba(0, 131, 202, 0.1);
-            color: var(--Aquascotch-blue-main);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.6rem;
+            font-size: 24px;
             margin-bottom: 16px;
         }
 
-        /* Certifications Grid */
         .cert-card {
-            background: #ffffff;
-            border-radius: 12px;
-            padding: 20px 14px;
-            text-align: center;
-            border: 1px solid #e2e8f0;
             height: 100%;
-        }
-        .cert-card i {
-            font-size: 2rem;
-            color: var(--Aquascotch-blue-main);
-            margin-bottom: 10px;
+            padding: 22px 12px;
+            text-align: center;
+            border: 1px solid var(--border);
+            background: white;
+            border-radius: 12px;
         }
 
-        /* Floating WhatsApp Chat Button */
+        .cert-card i {
+            font-size: 28px;
+            color: var(--blue);
+            margin-bottom: 12px;
+        }
+
         .floating-wa-box {
             position: fixed;
-            bottom: 25px;
-            right: 25px;
-            z-index: 9999;
+            right: 20px;
+            bottom: 20px;
+            z-index: 1040;
         }
+
         .floating-wa-btn {
-            width: 60px;
-            height: 60px;
-            background: var(--whatsapp-green);
-            color: #ffffff;
+            width: 58px;
+            height: 58px;
+            background: var(--green);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-size: 30px;
+            text-decoration: none;
+            box-shadow: 0 5px 20px #25d36665;
+        }
+
+        .floating-wa-btn:hover {
+            color: white;
+            transform: scale(1.08);
+        }
+
+        .footer-Aquascotch {
+            background: #081a2e;
+            color: #cbd5e1;
+            padding: 55px 0 25px;
+            font-size: 13px;
+        }
+
+        .footer-Aquascotch h5,
+        .footer-Aquascotch h6 {
+            color: white;
+            font-weight: 700;
+            margin-bottom: 18px;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 11px;
+        }
+
+        .footer-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: white;
+            padding-left: 3px;
+        }
+
+        .footer-contact p {
+            line-height: 1.7;
+            overflow-wrap: anywhere;
+        }
+
+        .footer-contact i {
+            color: #38bdf8;
+            width: 19px;
+        }
+
+        .footer-social {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 9px;
+        }
+
+        .footer-social a {
+            width: 36px;
+            height: 36px;
+            border: 1px solid #64748b;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 32px;
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
+            color: white;
             text-decoration: none;
-            transition: transform 0.3s ease;
-        }
-        .floating-wa-btn:hover {
-            transform: scale(1.1);
-            color: #ffffff;
         }
 
-        /* Footer */
-        .footer-Aquascotch {
-            background-color: #081a2e;
-            color: #94a3b8;
-            padding-top: 60px;
-            padding-bottom: 30px;
-            font-size: 0.88rem;
+        .footer-social a:hover {
+            background: var(--blue);
+            border-color: var(--blue);
         }
-        .footer-Aquascotch h6 {
-            color: #ffffff;
+
+        .footer-book-box {
+            background: linear-gradient(135deg, #003366, #0083ca);
+            border: 1px solid #ffffff25;
+            border-radius: 14px;
+            padding: 20px;
+            color: white;
+            height: 100%;
+        }
+
+        .footer-book-box p {
+            color: #dbeafe;
+            line-height: 1.7;
+        }
+
+        .footer-book-btn {
+            width: 100%;
+            padding: 11px 15px;
+            border: 0;
+            border-radius: 8px;
+            background: var(--orange);
+            color: white;
             font-weight: 700;
-            margin-bottom: 20px;
-            font-size: 1rem;
-            letter-spacing: 0.3px;
+            transition: .2s;
         }
-        .footer-links {
-            list-style: none;
-            padding-left: 0;
+
+        .footer-book-btn:hover {
+            background: #d95e12;
+            transform: translateY(-2px);
         }
-        .footer-links li {
-            margin-bottom: 10px;
-        }
-        .footer-links a {
+
+        .footer-bottom a {
             color: #cbd5e1;
             text-decoration: none;
-            transition: color 0.2s;
         }
-        .footer-links a:hover {
-            color: #ffffff;
-            padding-left: 4px;
+
+        .footer-bottom a:hover {
+            color: white;
+        }
+
+        @media (max-width: 991px) {
+            .navbar-Aquascotch {
+                padding: 4px 0;
+            }
+
+            .navbar-Aquascotch .nav-link {
+                padding: 11px 12px !important;
+            }
+
+            .hero-img-box {
+                height: 280px;
+            }
+
+            .hero-img-box img {
+                max-height: 270px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .main-header {
+                padding: 12px 0;
+            }
+
+            .brand-logo {
+                width: 125px;
+            }
+
+            .hero-banner-section {
+                padding: 28px 0;
+            }
+
+            .hero-title {
+                font-size: 28px;
+            }
+
+            .hero-img-box {
+                height: 230px;
+                margin-top: 15px;
+            }
+
+            .hero-img-box img {
+                max-height: 220px;
+            }
+
+            .section-header-title {
+                font-size: 25px;
+            }
+
+            .product-img-holder {
+                height: 190px;
+            }
+
+            .product-img-holder img {
+                max-height: 150px;
+            }
+
+            .product-details {
+                padding: 14px;
+            }
+
+            .product-name {
+                font-size: 14px;
+            }
+
+            .price-current {
+                font-size: 18px;
+            }
+
+            .floating-wa-box {
+                right: 14px;
+                bottom: 14px;
+            }
+
+            .floating-wa-btn {
+                width: 52px;
+                height: 52px;
+                font-size: 27px;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .product-img-holder {
+                height: 155px;
+                padding: 10px;
+            }
+
+            .product-img-holder img {
+                max-height: 125px;
+            }
+
+            .product-details {
+                padding: 10px;
+            }
+
+            .badge-tag,
+            .badge-discount {
+                font-size: 8px;
+                padding: 4px 5px;
+            }
+
+            .btn-card-demo,
+            .btn-card-wa {
+                font-size: 10px;
+                padding: 9px 4px;
+            }
         }
     </style>
 </head>
+
 <body>
 
-    <!-- Top Utility Bar -->
-    <div class="top-utility-bar">
-        <div class="container d-flex justify-content-between align-items-center">
-            <div class="d-none d-md-flex gap-3">
-                <a href="#partner"><i class="fas fa-handshake me-1"></i> Become a Trade Partner</a>
-                <a href="#service"><i class="fas fa-headset me-1"></i> Customer Service</a>
-                <a href="#locator"><i class="fas fa-map-marker-alt me-1"></i> Dealer Locator</a>
-            </div>
-            <div class="d-flex align-items-center gap-3 ms-auto">
-                <span class="small"><i class="fas fa-globe me-1"></i> Language:</span>
-                <select class="lang-select" aria-label="Select Language">
-                    <option value="en">English</option>
-                    <option value="hi">हिन्दी (Hindi)</option>
-                    <option value="bn">বাংলা (Bengali)</option>
-                    <option value="te">తెలుగు (Telugu)</option>
-                    <option value="ta">தமிழ் (Tamil)</option>
-                    <option value="mr">मराठी (Marathi)</option>
-                </select>
-                <a href="#login" class="ms-2"><i class="fas fa-user-circle me-1"></i> Login / Register</a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Main Header -->
+    <!-- HEADER -->
     <header class="main-header">
         <div class="container">
             <div class="row align-items-center g-3">
-                <!-- Logo -->
                 <div class="col-6 col-md-3">
-                    <a href="#" class="d-flex align-items-center text-decoration-none">
-                        <img src="logo.jpeg                                                     " alt="" style="width: 150px;">
-                           
+                    <a href="#hero" class="d-inline-block">
+                        <img src="logo.jpeg" alt="AquaScotch Logo" class="brand-logo">
                     </a>
                 </div>
 
-                <!-- Search Bar -->
                 <div class="col-12 col-md-5 order-3 order-md-2">
-                    <div class="input-group">
-                        <input type="text" class="form-control search-bar-input" id="searchInput" placeholder="Search RO, UV, Gravity Purifiers, Softeners..." onkeyup="handleSearch()">
-                        <button class="btn search-bar-btn" type="button"><i class="fas fa-search"></i></button>
-                    </div>
+                    <form class="input-group" id="searchForm" role="search">
+                        <input type="search" class="form-control search-bar-input" id="searchInput"
+                            placeholder="Search products, RO parts, cartridges..." aria-label="Search products">
+                        <button class="btn search-bar-btn" type="submit" aria-label="Search">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </form>
                 </div>
 
-                <!-- Actions / Call Support / Book Demo -->
-                <div class="col-6 col-md-4 order-2 order-md-3 text-end d-flex align-items-center justify-content-end gap-3">
-                    <div class="d-none d-lg-block text-start">
-                        <small class="text-muted d-block" style="font-size: 0.72rem; line-height: 1;">24x7 Helpline</small>
-                        <a href="tel:+919278992789" class="fw-bold text-dark text-decoration-none" style="font-size: 0.95rem;">+91 9422479515</a>
-                    </div>
-                   
+                <div class="col-6 col-md-4 order-2 order-md-3 text-end">
+                    <small class="d-none d-lg-block" style="color:#64748b">Customer Support</small>
+                    <a href="tel:+919422479515" class="fw-bold text-dark text-decoration-none">
+                        <i class="fas fa-phone me-1 text-primary"></i> 9422479515
+                    </a>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- Navigation Bar -->
+    <!-- NAVIGATION -->
     <nav class="navbar navbar-expand-lg navbar-Aquascotch">
         <div class="container">
-            <button class="navbar-toggler my-2 text-white border-white" type="button" data-bs-toggle="collapse" data-bs-target="#AquascotchNavbarMenu">
+            <button class="navbar-toggler my-2 text-white border-white" type="button" data-bs-toggle="collapse"
+                data-bs-target="#AquascotchNavbarMenu" aria-controls="AquascotchNavbarMenu" aria-expanded="false"
+                aria-label="Toggle navigation">
                 <i class="fas fa-bars fs-4"></i>
             </button>
 
             <div class="collapse navbar-collapse" id="AquascotchNavbarMenu">
                 <ul class="navbar-nav me-auto">
-                    <!-- Dropdown: Water Purifiers -->
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" href="#products" id="waterPurifiersDropdown" role="button" data-bs-toggle="dropdown">
-                             Purifiers Components
-                        </a>
+                        <a class="nav-link dropdown-toggle active" href="#products" data-bs-toggle="dropdown">Purifier
+                            Components</a>
                         <ul class="dropdown-menu dropdown-menu-Aquascotch">
-                            <li><a class="dropdown-item dropdown-item-Aquascotch" href="#products" onclick="filterCategory('ro')">RO Water Purifiers</a></li>
-                            <li><a class="dropdown-item dropdown-item-Aquascotch" href="#products" onclick="filterCategory('alkaline')">Hydrogen & Alkaline Purifiers</a></li>
-                            <li><a class="dropdown-item dropdown-item-Aquascotch" href="#products" onclick="filterCategory('uv')">UV Water Purifiers</a></li>
-                            <li><a class="dropdown-item dropdown-item-Aquascotch" href="#products" onclick="filterCategory('gravity')">Gravity Purifiers (Non-Electric)</a></li>
-                            <li><a class="dropdown-item dropdown-item-Aquascotch" href="#products" onclick="filterCategory('commercial')">Commercial RO Purifiers</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item dropdown-item-Aquascotch" href="#technology">Water Softeners for Homes</a></li>
+                            <li><a class="dropdown-item dropdown-item-Aquascotch" href="#products" data-category="ro">RO
+                                    Components</a></li>
+                            <li><a class="dropdown-item dropdown-item-Aquascotch" href="#products"
+                                    data-category="alkaline">Alkaline Products</a></li>
+                            <li><a class="dropdown-item dropdown-item-Aquascotch" href="#products" data-category="uv">UV
+                                    Components</a></li>
+                            <li><a class="dropdown-item dropdown-item-Aquascotch" href="#products"
+                                    data-category="gravity">Gravity Products</a></li>
+                            <li><a class="dropdown-item dropdown-item-Aquascotch" href="#products"
+                                    data-category="commercial">Commercial RO Parts</a></li>
                         </ul>
                     </li>
-
-                    <li class="nav-item"><a class="nav-link" href="#products" onclick="filterCategory('ro')">RO Purifiers</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#products" onclick="filterCategory('alkaline')">Alkaline Water</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#products" data-category="ro">RO Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#products" data-category="alkaline">Alkaline</a></li>
                     <li class="nav-item"><a class="nav-link" href="#technology">Technology</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#certifications">Certifications</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#why-Aquascotch">Why Aquascotch</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#why-Aquascotch">Why AquaScotch</a></li>
                 </ul>
-                <div class="d-none d-xl-flex align-items-center text-white gap-2">
-                    <i class="fab fa-whatsapp fs-5 text-success"></i>
-                    <a href="https://wa.me/919278992789?text=Hi%20Aquascotch%20Team%2C%20I%20need%20assistance%20with%20water%20purifiers." target="_blank" class="text-white text-decoration-none fw-semibold small">WhatsApp Support</a>
-                </div>
+
+                <a href="https://wa.me/919422479515" target="_blank" rel="noopener"
+                    class="text-white text-decoration-none fw-semibold small py-2">
+                    <i class="fab fa-whatsapp me-1"></i> WhatsApp Support
+                </a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Banner Carousel Section -->
+    <!-- HERO CAROUSEL -->
     <section class="hero-banner-section" id="hero">
         <div class="container">
-            <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+            <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"
+                        aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                </div>
+
                 <div class="carousel-inner">
-                    <!-- Slide 1 -->
                     <div class="carousel-item active">
                         <div class="row align-items-center">
                             <div class="col-lg-6">
-                                <span class="hero-badge"><i class="fas fa-crown me-1"></i> India's #1 Most Trusted RO Brand</span>
-                                <h1 class="hero-title mb-3">100% Pure Water with Retained Essential Minerals</h1>
-                                <p class="text-secondary lead mb-4">Patented Mineral RO™ Technology with TDS Controller ensures pure, safe, and delicious drinking water for your family.</p>
+                                <span class="hero-badge"><i class="fas fa-droplet me-1"></i> Water Purification
+                                    Solutions</span>
+                                <h1 class="hero-title mb-3">Reliable Water Purifier Components for Every Need</h1>
+                                <p class="text-secondary mb-4">Explore cartridges, RO accessories, pumps, power supplies
+                                    and essential filtration products for home and business.</p>
                                 <div class="d-flex flex-wrap gap-3">
-                                    <a href="#products" class="btn btn-book-demo-header px-4 py-2 text-uppercase fs-6">Explore Purifiers</a>
-                                    <button class="btn btn-outline-primary rounded-pill px-4 py-2 fw-bold" data-bs-toggle="modal" data-bs-target="#demoModal">
-                                        <i class="fas fa-flask me-1"></i> Free TDS Water Test
+                                    <a href="#products" class="btn btn-book-demo-header">Explore Products</a>
+                                    <button class="btn btn-outline-primary rounded-pill px-4 fw-bold"
+                                        data-bs-toggle="modal" data-bs-target="#demoModal">
+                                        <i class="fas fa-calendar-check me-1"></i> Book Now
                                     </button>
                                 </div>
                             </div>
-                            <div class="col-lg-6 hero-img-box mt-4 mt-lg-0">
-                                <img src="banner-1.jpeg" alt="Aquascotch Grand Plus" class="img-fluid rounded-4">
+                            <div class="col-lg-6">
+                                <div class="hero-img-box">
+                                    <img src="banner-1.jpeg" alt="Water purification products" fetchpriority="high">
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Slide 2 -->
                     <div class="carousel-item">
                         <div class="row align-items-center">
                             <div class="col-lg-6">
-                                <span class="hero-badge"><i class="fas fa-microchip me-1"></i> Next-Gen Smart Purification</span>
-                                <h1 class="hero-title mb-3">IoT Enabled RO Purifiers with Digital Display</h1>
-                                <p class="text-secondary lead mb-4">Real-time water purity, filter life indicators, and auto-service alerts right on your digital screen.</p>
-                                <div class="d-flex flex-wrap gap-3">
-                                    <a href="#products" onclick="filterCategory('ro')" class="btn btn-book-demo-header px-4 py-2 text-uppercase fs-6">View Smart ROs</a>
-                                </div>
+                                <span class="hero-badge"><i class="fas fa-gears me-1"></i> RO Spare Parts</span>
+                                <h2 class="hero-title mb-3">Quality Components for Your RO System</h2>
+                                <p class="text-secondary mb-4">Find useful replacement parts and accessories for
+                                    compatible water filtration systems.</p>
+                                <a href="#products" data-category="ro" class="btn btn-book-demo-header">View RO
+                                    Products</a>
                             </div>
-                            <div class="col-lg-6 hero-img-box mt-4 mt-lg-0">
-                                <img src="banner-4.jpeg" alt="Aquascotch Prime Plus" class="img-fluid rounded-4">
+                            <div class="col-lg-6">
+                                <div class="hero-img-box">
+                                    <img src="banner-4.jpeg" alt="RO system components" loading="lazy">
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Slide 3 -->
                     <div class="carousel-item">
                         <div class="row align-items-center">
                             <div class="col-lg-6">
-                                <span class="hero-badge"><i class="fas fa-leaf me-1"></i> Health & Wellness</span>
-                                <h1 class="hero-title mb-3">Alkaline & Hydrogen-Rich Water (pH 8.0 - 9.5)</h1>
-                                <p class="text-secondary lead mb-4">Enhance immunity and maintain optimal body pH balance with Aquascotch's advanced alkaline hydration technology.</p>
-                                <div class="d-flex flex-wrap gap-3">
-                                    <a href="#products" onclick="filterCategory('alkaline')" class="btn btn-book-demo-header px-4 py-2 text-uppercase fs-6">Explore Alkaline Range</a>
-                                </div>
+                                <span class="hero-badge"><i class="fas fa-headset me-1"></i> Customer Assistance</span>
+                                <h2 class="hero-title mb-3">Need Help Choosing the Right Product?</h2>
+                                <p class="text-secondary mb-4">Tell us what you need. Our team can help you enquire
+                                    about compatible components and product availability.</p>
+                                <button class="btn btn-book-demo-header" data-bs-toggle="modal"
+                                    data-bs-target="#demoModal">Book Now</button>
                             </div>
-                            <div class="col-lg-6 hero-img-box mt-4 mt-lg-0">
-                                <img src="banner-3.jpeg" alt="Aquascotch Alkaline" class="img-fluid rounded-4">
+                            <div class="col-lg-6">
+                                <div class="hero-img-box">
+                                    <img src="banner-3.jpeg" alt="Water care solutions" loading="lazy">
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <button class="carousel-control-prev d-none d-md-block" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev" style="width: 5%;">
-                    <span class="carousel-control-prev-icon bg-dark rounded-circle p-3" aria-hidden="true"></span>
+                <button class="carousel-control-prev d-none d-md-flex" type="button" data-bs-target="#heroCarousel"
+                    data-bs-slide="prev" style="width:5%">
+                    <span class="carousel-control-prev-icon bg-dark rounded-circle p-3"></span>
+                    <span class="visually-hidden">Previous</span>
                 </button>
-                <button class="carousel-control-next d-none d-md-block" type="button" data-bs-target="#heroCarousel" data-bs-slide="next" style="width: 5%;">
-                    <span class="carousel-control-next-icon bg-dark rounded-circle p-3" aria-hidden="true"></span>
+                <button class="carousel-control-next d-none d-md-flex" type="button" data-bs-target="#heroCarousel"
+                    data-bs-slide="next" style="width:5%">
+                    <span class="carousel-control-next-icon bg-dark rounded-circle p-3"></span>
+                    <span class="visually-hidden">Next</span>
                 </button>
             </div>
         </div>
     </section>
 
-    <!-- Category Filter Tabs & Products Catalog -->
+    <!-- PRODUCTS -->
     <section class="filter-section" id="products">
         <div class="container">
-            <h2 class="section-header-title">Aquascotch Water Purifiers Catalog</h2>
-            <p class="section-header-subtitle">Find the perfect purifier engineered for your home's water source and family size</p>
+            <h2 class="section-header-title">AquaScotch Product Catalog</h2>
+            <p class="section-header-subtitle">Browse water purifier components and accessories for home and business
+                needs.</p>
 
-            <!-- Filter Tab Buttons -->
             <div class="d-flex justify-content-center flex-wrap mb-4" id="categoryFilterContainer">
-                <button class="filter-btn active" onclick="filterCategory('all', this)">All Purifiers</button>
-                <button class="filter-btn" onclick="filterCategory('ro', this)">RO Purifiers</button>
-                <button class="filter-btn" onclick="filterCategory('alkaline', this)">Alkaline & Hydrogen</button>
-                <button class="filter-btn" onclick="filterCategory('uv', this)">UV Purifiers</button>
-                <button class="filter-btn" onclick="filterCategory('gravity', this)">Gravity Non-Electric</button>
-                <button class="filter-btn" onclick="filterCategory('commercial', this)">Commercial Purifiers</button>
+                <button type="button" class="filter-btn active" data-filter="all">All Products</button>
+                <button type="button" class="filter-btn" data-filter="ro">RO Products</button>
+                <button type="button" class="filter-btn" data-filter="alkaline">Alkaline</button>
+                <button type="button" class="filter-btn" data-filter="uv">UV Products</button>
+                <button type="button" class="filter-btn" data-filter="gravity">Gravity Products</button>
+                <button type="button" class="filter-btn" data-filter="commercial">Commercial</button>
             </div>
 
-            <!-- Products Grid Container -->
-            <div class="row g-4" id="productsGrid">
-                <!-- Dynamically populated by JavaScript -->
+            <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
+                <span id="resultsCount" class="small" style="color:#64748b" aria-live="polite"></span>
+                <button type="button" id="clearFilters" class="btn btn-sm btn-outline-secondary">Clear Search &
+                    Filters</button>
             </div>
+
+            <div class="row g-4" id="productsGrid"></div>
         </div>
     </section>
 
-    <!-- Technology Highlights Section -->
+    <!-- TECHNOLOGY -->
     <section class="py-5 bg-light border-top border-bottom" id="technology">
         <div class="container">
-            <h2 class="section-header-title">The Aquascotch Advantage</h2>
-            <p class="section-header-subtitle">Patented technologies delivering purity, health, and zero water wastage</p>
+            <h2 class="section-header-title">Our Product Advantages</h2>
+            <p class="section-header-subtitle">Explore useful components and accessories for filtration systems.</p>
 
             <div class="row g-4">
                 <div class="col-md-6 col-lg-4">
                     <div class="tech-card">
-                        <div class="tech-icon-circle">
-                            <i class="fas fa-vial"></i>
-                        </div>
-                        <h5 class="fw-bold text-dark mb-2">Mineral RO™ Technology</h5>
-                        <p class="text-secondary small mb-0">Aquascotch's patented Mineral RO™ Technology uses a TDS Controller that retains essential natural minerals in purified water, making it 100% pure and healthy.</p>
+                        <div class="tech-icon-circle"><i class="fas fa-filter"></i></div>
+                        <h5 class="fw-bold">Filtration Components</h5>
+                        <p class="small mb-0">Explore filter cartridges and replacement components. Check system
+                            compatibility before ordering.</p>
                     </div>
                 </div>
-
                 <div class="col-md-6 col-lg-4">
                     <div class="tech-card">
-                        <div class="tech-icon-circle">
-                            <i class="fas fa-recycle"></i>
-                        </div>
-                        <h5 class="fw-bold text-dark mb-2">Copper-infused filtration media</h5>
-                        <p class="text-secondary small mb-0">Recirculates rejected water back to the overhead tank using its own internal pump, ensuring not a single drop of water is wasted during purification.</p>
+                        <div class="tech-icon-circle"><i class="fas fa-plug"></i></div>
+                        <h5 class="fw-bold">Electrical Accessories</h5>
+                        <p class="small mb-0">Find compatible power supplies and accessories for supported RO systems.
+                        </p>
                     </div>
                 </div>
-
                 <div class="col-md-6 col-lg-4">
                     <div class="tech-card">
-                        <div class="tech-icon-circle">
-                            <i class="fas fa-shield-virus"></i>
-                        </div>
-                        <h5 class="fw-bold text-dark mb-2">In-Tank UV Disinfection</h5>
-                        <p class="text-secondary small mb-0">Keeps purified water in the storage tank free from microbial contamination for long durations with automatic LED UV light protection.</p>
+                        <div class="tech-icon-circle"><i class="fas fa-gears"></i></div>
+                        <h5 class="fw-bold">Pumps & Fittings</h5>
+                        <p class="small mb-0">Browse pumps, pipes and fittings for compatible water purification
+                            systems.</p>
                     </div>
                 </div>
-
                 <div class="col-md-6 col-lg-4">
                     <div class="tech-card">
-                        <div class="tech-icon-circle">
-                            <i class="fas fa-tv"></i>
-                        </div>
-                        <h5 class="fw-bold text-dark mb-2">Digital Display & IoT</h5>
-                        <p class="text-secondary small mb-0">Real-time status display showing water purity, filter life indicator, RO flow rate, and auto-fault alerts on an interactive screen.</p>
+                        <div class="tech-icon-circle"><i class="fas fa-house"></i></div>
+                        <h5 class="fw-bold">Home Applications</h5>
+                        <p class="small mb-0">Components and accessories for everyday domestic filtration requirements.
+                        </p>
                     </div>
                 </div>
-
                 <div class="col-md-6 col-lg-4">
                     <div class="tech-card">
-                        <div class="tech-icon-circle">
-                            <i class="fas fa-box-archive"></i>
-                        </div>
-                        <h5 class="fw-bold text-dark mb-2">Stainless Steel Storage</h5>
-                        <p class="text-secondary small mb-0">Selected models feature high-grade food stainless steel storage tanks preventing bacterial growth and maintaining purity.</p>
+                        <div class="tech-icon-circle"><i class="fas fa-building"></i></div>
+                        <h5 class="fw-bold">Commercial Applications</h5>
+                        <p class="small mb-0">Enquire about parts and components for compatible commercial filtration
+                            setups.</p>
                     </div>
                 </div>
-
                 <div class="col-md-6 col-lg-4">
                     <div class="tech-card">
-                        <div class="tech-icon-circle">
-                            <i class="fas fa-certificate"></i>
-                        </div>
-                        <h5 class="fw-bold text-dark mb-2">Multiple Purification</h5>
-                        <p class="text-secondary small mb-0">Combines RO + UV + UF + TDS Control + In-Tank UV to eliminate dissolved impurities like heavy metals, arsenic, pesticides, and germs.</p>
+                        <div class="tech-icon-circle"><i class="fas fa-headset"></i></div>
+                        <h5 class="fw-bold">Product Assistance</h5>
+                        <p class="small mb-0">Contact us to enquire about availability and choosing compatible products.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Certifications & Awards -->
-    <section class="py-5 bg-white" id="certifications">
-        <div class="container">
-            <h2 class="section-header-title">Tested & India Certified</h2>
-            <p class="section-header-subtitle">Aquascotch Purifiers hold Indian quality certifications for safety and performance</p>
-
-            <div class="row g-3 text-center">
-                <div class="col-6 col-md-4 col-lg-2">
-                    <div class="cert-card">
-                        <i class="fas fa-award"></i>
-                        <h6 class="fw-bold text-dark mb-1">NSF USA</h6>
-                        <small class="text-muted d-block">NSF/ANSI 58 Standard</small>
-                    </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-2">
-                    <div class="cert-card">
-                        <i class="fas fa-check-circle"></i>
-                        <h6 class="fw-bold text-dark mb-1">BIS / ISI</h6>
-                        <small class="text-muted d-block">IS 14543 Certified</small>
-                    </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-2">
-                    <div class="cert-card">
-                        <i class="fas fa-globe"></i>
-                        <h6 class="fw-bold text-dark mb-1">CE Mark</h6>
-                        <small class="text-muted d-block">European Conformity</small>
-                    </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-2">
-                    <div class="cert-card">
-                        <i class="fas fa-leaf"></i>
-                        <h6 class="fw-bold text-dark mb-1">RoHS</h6>
-                        <small class="text-muted d-block">Hazardous Free</small>
-                    </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-2">
-                    <div class="cert-card">
-                        <i class="fas fa-shield-alt"></i>
-                        <h6 class="fw-bold text-dark mb-1">TÜV SÜD</h6>
-                        <small class="text-muted d-block">Tested Safe Water</small>
-                    </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-2">
-                    <div class="cert-card">
-                        <i class="fas fa-trophy"></i>
-                        <h6 class="fw-bold text-dark mb-1">Water Digest</h6>
-                        <small class="text-muted d-block">Best RO Award</small>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Us Section -->
+    <!-- ABOUT -->
     <section class="py-5 bg-white border-top" id="about">
         <div class="container">
-            <h2 class="section-header-title">About Aquascotch</h2>
-            <p class="section-header-subtitle">Your partner for dependable water purification solutions in India</p>
+            <h2 class="section-header-title">About AquaScotch</h2>
+            <p class="section-header-subtitle">Your partner for water purification components and accessories.</p>
+
             <div class="row align-items-center g-4">
                 <div class="col-lg-6">
                     <div class="tech-card">
                         <h4 class="fw-bold mb-3">Pure Water. Reliable Solutions.</h4>
-                        <p class="mb-3">Aquascotch offers water purifier components and filtration products for home and business needs. Our aim is to help customers find practical, dependable solutions for water purification and maintenance.</p>
-                        <p class="mb-0">From replacement cartridges and fittings to essential RO accessories, we focus on useful products, clear guidance, and responsive customer support.</p>
+                        <p class="mb-3">RB Aqua & Appliances offers water purifier components and filtration products
+                            for home and business needs.</p>
+                        <p class="mb-0">From replacement cartridges and fittings to essential RO accessories, we focus
+                            on useful products, clear guidance and responsive customer support.</p>
                     </div>
                 </div>
+
                 <div class="col-lg-6">
                     <div class="row g-3">
                         <div class="col-6">
                             <div class="cert-card">
-                                <i class="fas fa-droplet"></i>
-                                <h6 class="fw-bold text-dark">Water Care</h6>
-                                <small class="d-block">Products for everyday filtration needs</small>
+                                <i class="fas fa-droplet d-block"></i>
+                                <h6 class="fw-bold">Water Care</h6>
+                                <small>Filtration products</small>
                             </div>
                         </div>
                         <div class="col-6">
                             <div class="cert-card">
-                                <i class="fas fa-gears"></i>
-                                <h6 class="fw-bold text-dark">RO Components</h6>
-                                <small class="d-block">Essential parts and accessories</small>
+                                <i class="fas fa-gears d-block"></i>
+                                <h6 class="fw-bold">RO Components</h6>
+                                <small>Parts and accessories</small>
                             </div>
                         </div>
                         <div class="col-6">
                             <div class="cert-card">
-                                <i class="fas fa-house"></i>
-                                <h6 class="fw-bold text-dark">Home & Business</h6>
-                                <small class="d-block">Solutions for different requirements</small>
+                                <i class="fas fa-house d-block"></i>
+                                <h6 class="fw-bold">Home & Business</h6>
+                                <small>Different requirements</small>
                             </div>
                         </div>
                         <div class="col-6">
                             <div class="cert-card">
-                                <i class="fas fa-headset"></i>
-                                <h6 class="fw-bold text-dark">Customer Support</h6>
-                                <small class="d-block">Help choosing the right product</small>
+                                <i class="fas fa-headset d-block"></i>
+                                <h6 class="fw-bold">Customer Support</h6>
+                                <small>Product assistance</small>
                             </div>
                         </div>
                     </div>
@@ -849,86 +966,104 @@
         </div>
     </section>
 
-    <!-- Why Choose Aquascotch -->
+    <!-- WHY CHOOSE US -->
     <section class="py-5 bg-light border-top" id="why-Aquascotch">
         <div class="container">
             <h2 class="section-header-title">Why Choose AquaScotch?</h2>
-            <p class="section-header-subtitle">Trusted by over 50 Lakh happy families across India</p>
+            <p class="section-header-subtitle">Product options and customer assistance for your filtration needs.</p>
 
             <div class="row g-4 text-center">
-                <div class="col-md-3">
-                    <div class="p-4 border rounded-4 bg-white h-100 shadow-sm">
-                        <h2 class="fw-extrabold text-primary display-5 mb-2">25+</h2>
-                        <h6 class="fw-bold text-dark">Years of Purity</h6>
-                        <p class="text-muted small mb-0">Leader in water purification innovation in India.</p>
+                <div class="col-6 col-lg-3">
+                    <div class="cert-card shadow-sm">
+                        <i class="fas fa-box-open d-block"></i>
+                        <h6 class="fw-bold">Product Range</h6>
+                        <p class="small mb-0">Explore components and accessories.</p>
                     </div>
                 </div>
-                <div class="col-md-3">
-                    <div class="p-4 border rounded-4 bg-white h-100 shadow-sm">
-                        <h2 class="fw-extrabold text-primary display-5 mb-2">50L+</h2>
-                        <h6 class="fw-bold text-dark">Happy Families</h6>
-                        <p class="text-muted small mb-0">Providing clean drinking water to millions daily.</p>
+                <div class="col-6 col-lg-3">
+                    <div class="cert-card shadow-sm">
+                        <i class="fas fa-gears d-block"></i>
+                        <h6 class="fw-bold">Useful Parts</h6>
+                        <p class="small mb-0">Find replacement components.</p>
                     </div>
                 </div>
-                <div class="col-md-3">
-                    <div class="p-4 border rounded-4 bg-white h-100 shadow-sm">
-                        <h2 class="fw-extrabold text-primary display-5 mb-2">1500+</h2>
-                        <h6 class="fw-bold text-dark">Service Centers</h6>
-                        <p class="text-muted small mb-0">Pan-India network for fast door-step service.</p>
+                <div class="col-6 col-lg-3">
+                    <div class="cert-card shadow-sm">
+                        <i class="fas fa-comments d-block"></i>
+                        <h6 class="fw-bold">Easy Enquiry</h6>
+                        <p class="small mb-0">Ask about product availability.</p>
                     </div>
                 </div>
-                <div class="col-md-3">
-                    <div class="p-4 border rounded-4 bg-white h-100 shadow-sm">
-                        <h2 class="fw-extrabold text-primary display-5 mb-2">100%</h2>
-                        <h6 class="fw-bold text-dark">Pure Water Guarantee</h6>
-                        <p class="text-muted small mb-0">Comprehensive multi-stage purification technology.</p>
+                <div class="col-6 col-lg-3">
+                    <div class="cert-card shadow-sm">
+                        <i class="fas fa-headset d-block"></i>
+                        <h6 class="fw-bold">Customer Help</h6>
+                        <p class="small mb-0">Get assistance with product selection.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Free Demo Modal -->
+    <!-- BOOK NOW MODAL -->
     <div class="modal fade" id="demoModal" tabindex="-1" aria-labelledby="demoModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content border-0 shadow-lg rounded-4">
-                <div class="modal-header text-white" style="background: var(--Aquascotch-blue-dark); border-radius: 16px 16px 0 0;">
-                    <h5 class="modal-header-title fw-bold m-0" id="demoModalLabel"><i class="fas fa-vial me-2"></i> Book Free Home Demo & TDS Test</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="modal-header text-white" style="background:#003366">
+                    <h5 class="modal-title fw-bold" id="demoModalLabel">
+                        <i class="fas fa-calendar-check me-2"></i>Book Now
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
                 </div>
+
                 <div class="modal-body p-4">
-                    <p class="text-muted small mb-3">Fill out your details below to schedule a free water TDS test and live demo at your doorstep via WhatsApp.</p>
-                    <form id="modalDemoForm" onsubmit="submitModalDemo(event)">
-                        <div class="row g-2 mb-2">
+                    <p class="small mb-3" style="color:#64748b">
+                        Share your details and product enquiry. Our team can contact you to discuss availability and
+                        next steps.
+                    </p>
+
+                    <form id="modalDemoForm">
+                        <div class="row g-3 mb-3">
                             <div class="col-6">
-                                <label class="form-label small fw-semibold mb-1">First Name *</label>
-                                <input type="text" id="mFirstName" class="form-control" required placeholder="John">
+                                <label for="mFirstName" class="form-label small fw-semibold">First Name *</label>
+                                <input type="text" id="mFirstName" class="form-control" required maxlength="60"
+                                    placeholder="First name">
                             </div>
                             <div class="col-6">
-                                <label class="form-label small fw-semibold mb-1">Last Name *</label>
-                                <input type="text" id="mLastName" class="form-control" required placeholder="Doe">
-                            </div>
-                        </div>
-                        <div class="mb-2">
-                            <label class="form-label small fw-semibold mb-1">Mobile Number *</label>
-                            <input type="tel" id="mMobile" class="form-control" pattern="[0-9]{10}" required placeholder="10-digit mobile number">
-                        </div>
-                        <div class="row g-2 mb-2">
-                            <div class="col-6">
-                                <label class="form-label small fw-semibold mb-1">City *</label>
-                                <input type="text" id="mCity" class="form-control" required placeholder="Mumbai / Delhi">
-                            </div>
-                            <div class="col-6">
-                                <label class="form-label small fw-semibold mb-1">Pincode *</label>
-                                <input type="text" id="mPincode" class="form-control" required placeholder="400001">
+                                <label for="mLastName" class="form-label small fw-semibold">Last Name</label>
+                                <input type="text" id="mLastName" class="form-control" maxlength="60"
+                                    placeholder="Last name">
                             </div>
                         </div>
+
                         <div class="mb-3">
-                            <label class="form-label small fw-semibold mb-1">Selected Product (Optional)</label>
-                            <input type="text" id="mSelectedProduct" class="form-control bg-light" readonly value="General Inquiry / Home Demo">
+                            <label for="mMobile" class="form-label small fw-semibold">Mobile Number *</label>
+                            <input type="tel" id="mMobile" class="form-control" pattern="[0-9]{10}" maxlength="10"
+                                inputmode="numeric" required placeholder="10-digit mobile number">
                         </div>
-                        <button type="submit" class="btn btn-card-wa py-2.5 fs-6 w-100">
-                            <i class="fab fa-whatsapp me-2 fs-5"></i> Send Request on WhatsApp
+
+                        <div class="row g-3 mb-3">
+                            <div class="col-6">
+                                <label for="mCity" class="form-label small fw-semibold">City *</label>
+                                <input type="text" id="mCity" class="form-control" required maxlength="80"
+                                    placeholder="Your city">
+                            </div>
+                            <div class="col-6">
+                                <label for="mPincode" class="form-label small fw-semibold">Pincode *</label>
+                                <input type="text" id="mPincode" class="form-control" pattern="[0-9]{6}" maxlength="6"
+                                    inputmode="numeric" required placeholder="6-digit pincode">
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="mSelectedProduct" class="form-label small fw-semibold">Product / Enquiry</label>
+                            <input type="text" id="mSelectedProduct" class="form-control" maxlength="150"
+                                value="General Product Enquiry">
+                        </div>
+
+                        <button type="submit" class="btn-card-wa">
+                            <i class="fab fa-whatsapp fs-5"></i> Send Enquiry on WhatsApp
                         </button>
                     </form>
                 </div>
@@ -936,492 +1071,578 @@
         </div>
     </div>
 
-    <!-- Floating WhatsApp Button -->
+    <!-- FLOATING WHATSAPP -->
     <div class="floating-wa-box">
-        <a href="https://wa.me/919278992789?text=Hello%20Aquascotch%20RO%20Team%2C%20I%20am%20interested%20in%20buying%20a%20water%20purifier.%20Please%20guide%20me." target="_blank" class="floating-wa-btn" title="Chat on WhatsApp">
+        <a href="https://wa.me/919422479515?text=Hello%20RB%20Aqua%20%26%20Appliances%2C%20I%20have%20a%20product%20enquiry."
+            target="_blank" rel="noopener" class="floating-wa-btn" aria-label="Chat on WhatsApp"
+            title="Chat on WhatsApp">
             <i class="fab fa-whatsapp"></i>
         </a>
     </div>
-```html
-<!-- Footer -->
-<footer class="footer-Aquascotch">
-    <div class="container">
-        <div class="row g-4 mb-5">
 
-            <!-- Brand / Shop Details -->
-            <div class="col-lg-4">
-                <h5 class="text-white fw-bold mb-3">RB AQUA & APPLIANCES</h5>
+    <!-- FOOTER -->
+    <footer class="footer-Aquascotch">
+        <div class="container">
+            <div class="row g-4 mb-5">
 
-                <p class="small mb-4">
-                    Water Purifiers, RO Systems & Home Appliances.
-                    Quality products and reliable service for your home.
-                </p>
+                <!-- BUSINESS DETAILS -->
+                <div class="col-lg-3 col-md-6">
+                    <h5>RB AQUA & APPLIANCES</h5>
+                    <p class="mb-4">
+                        Water purifiers, RO systems and home appliance components.
+                        Quality products and reliable customer assistance for your needs.
+                    </p>
 
-                <div class="d-flex gap-2">
-                    <a href="#" class="btn btn-sm btn-outline-light rounded-circle"
-                       style="width:36px; height:36px;">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/" target="_blank" rel="noopener" aria-label="YouTube"><i
+                                class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
 
-                    <a href="#" class="btn btn-sm btn-outline-light rounded-circle"
-                       style="width:36px; height:36px;">
-                        <i class="fab fa-twitter"></i>
-                    </a>
+                <!-- CATEGORIES -->
+                <div class="col-6 col-lg-2 col-md-6">
+                    <h6>Product Categories</h6>
+                    <ul class="footer-links">
+                        <li><a href="#products" data-category="ro">RO Products</a></li>
+                        <li><a href="#products" data-category="alkaline">Alkaline Products</a></li>
+                        <li><a href="#products" data-category="uv">UV Products</a></li>
+                        <li><a href="#products" data-category="gravity">Gravity Products</a></li>
+                        <li><a href="#products" data-category="commercial">Commercial RO</a></li>
+                    </ul>
+                </div>
 
-                    <a href="#" class="btn btn-sm btn-outline-light rounded-circle"
-                       style="width:36px; height:36px;">
-                        <i class="fab fa-instagram"></i>
-                    </a>
+                <!-- OUR PRODUCTS -->
+                <div class="col-6 col-lg-2 col-md-6">
+                    <h6>Our Products</h6>
+                    <ul class="footer-links">
+                        <li><a href="all-products.html">View All Products</a></li>
+                        <li><a href="#technology">Product Information</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#why-Aquascotch">Why AquaScotch</a></li>
+                    </ul>
+                </div>
 
-                    <a href="#" class="btn btn-sm btn-outline-light rounded-circle"
-                       style="width:36px; height:36px;">
-                        <i class="fab fa-youtube"></i>
-                    </a>
+                <!-- NEW BOOK NOW SECTION -->
+                <div class="col-lg-2 col-md-6">
+                    <div class="footer-book-box">
+                        <h5><i class="fas fa-calendar-check me-2"></i>Book Now</h5>
+                        <p class="small mb-3">
+                            Need help with a product? Send us your details and enquire with our team.
+                        </p>
+
+                        <button type="button" class="footer-book-btn" data-bs-toggle="modal"
+                            data-bs-target="#demoModal">
+                            BOOK NOW <i class="fas fa-arrow-right ms-1"></i>
+                        </button>
+
+                    </div>
+                </div>
+
+                <!-- CONTACT -->
+                <div class="col-lg-3 col-md-6 footer-contact">
+                    <h6>Contact Details</h6>
+                    <p class="mb-2"><i class="fas fa-user me-2"></i>Rajendra Kashinath Bhosale</p>
+                    <p class="mb-2"><i class="fas fa-map-marker-alt me-2"></i>Shop No. 13, Anand Complex, Paranjape
+                        Nagar, Cherpoli, Tal - Shahapur, Dist - Thane, Maharashtra - 421601</p>
+                    <p class="mb-2"><i class="fas fa-envelope me-2"></i><a href="mailto:aquascotch2025@gmail.com"
+                            class="text-decoration-none text-reset">aquascotch2025@gmail.com</a></p>
+                    <p class="mb-2"><i class="fas fa-phone me-2"></i><a href="tel:+919422479515"
+                            class="text-decoration-none text-reset">9422479515</a></p>
+                    <p class="mb-2"><i class="fas fa-phone me-2"></i><a href="tel:+919226479515"
+                            class="text-decoration-none text-reset">9226479515</a></p>
+                    <p class="mb-0"><i class="fas fa-file-invoice me-2"></i>GST No. 27AHRPB5249E1ZA</p>
                 </div>
             </div>
 
+            <hr style="border-color:#64748b; opacity:.35">
 
-            <!-- Product Categories -->
-            <div class="col-6 col-lg-2">
-                <h6>Product Categories</h6>
+            <div
+                class="footer-bottom d-md-flex justify-content-between align-items-center text-center text-md-start pt-3">
+                <p class="mb-2 mb-md-0">&copy; 2026 RB AQUA & APPLIANCES. All rights reserved.</p>
+                <div>
+                    <a href="#" class="me-3">Privacy Policy</a>
+                    <a href="#" class="me-3">Terms of Service</a>
+                    <a href="#">Disclaimer</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+<!-- BOOK NOW POPUP -->
+<div class="modal fade" id="demoModal" tabindex="-1"
+     aria-labelledby="demoModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
 
-                <ul class="footer-links">
-                    <li>
-                        <a href="#products" onclick="filterCategory('ro')">
-                            RO Purifiers
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#products" onclick="filterCategory('alkaline')">
-                            Alkaline Purifiers
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#products" onclick="filterCategory('uv')">
-                            UV Water Purifiers
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#products" onclick="filterCategory('gravity')">
-                            Gravity Purifiers
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#products" onclick="filterCategory('commercial')">
-                            Commercial RO
-                        </a>
-                    </li>
-                </ul>
+            <div class="modal-header text-white" style="background:#003366;">
+                <h5 class="modal-title" id="demoModalLabel">
+                    <i class="fas fa-calendar-check me-2"></i>Book Now
+                </h5>
+                <button type="button" class="btn-close btn-close-white"
+                        data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
+            <div class="modal-body p-4">
+                <p class="text-muted">Apni details bhariye. Enquiry WhatsApp par bheji jayegi.</p>
 
-            <!-- Quick Services -->
-            <div class="col-6 col-lg-2">
-                <h6>Quick Services</h6>
+                <form id="bookNowForm">
+                    <div class="mb-3">
+                        <label class="form-label">Full Name *</label>
+                        <input type="text" id="bookName" class="form-control"
+                               required placeholder="Enter your name">
+                    </div>
 
-                <ul class="footer-links">
-                    <li>
-                        <a href="#" data-bs-toggle="modal" data-bs-target="#demoModal">
-                            Book Free Demo
-                        </a>
-                    </li>
+                    <div class="mb-3">
+                        <label class="form-label">Mobile Number *</label>
+                        <input type="tel" id="bookMobile" class="form-control"
+                               required pattern="[0-9]{10}" maxlength="10"
+                               placeholder="10-digit mobile number">
+                    </div>
 
-                    <li>
-                        <a href="#">
-                            Track Service Request
-                        </a>
-                    </li>
+                    <div class="mb-3">
+                        <label class="form-label">City *</label>
+                        <input type="text" id="bookCity" class="form-control"
+                               required placeholder="Enter your city">
+                    </div>
 
-                    <li>
-                        <a href="#">
-                            Register Warranty
-                        </a>
-                    </li>
+                    <div class="mb-3">
+                        <label class="form-label">Product Name</label>
+                        <input type="text" id="bookProduct" class="form-control"
+                               placeholder="Which product do you need?">
+                    </div>
 
-                    <li>
-                        <a href="#">
-                            AMC Plans
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#">
-                            Find Dealer Near Me
-                        </a>
-                    </li>
-                </ul>
-            </div>
-
-
-            <!-- Contact Details -->
-            <div class="col-lg-4">
-
-                <h6>RB AQUA & APPLIANCES</h6>
-
-                <p class="small mb-2">
-                    <i class="fas fa-user me-2 text-primary"></i>
-                    Rajendra Kashinath Bhosale
-                </p>
-
-                <p class="small mb-2">
-                    <i class="fas fa-map-marker-alt me-2 text-primary"></i>
-                    Shop No. 13, Anand Complex, Paranjape Nagar,
-                    Cherpoli, Tal - Shahapur, Dist - Thane,
-                    Maharashtra - 421601
-                </p>
-
-                <p class="small mb-2">
-                    <i class="fas fa-envelope me-2 text-primary"></i>
-                    aquascotch2025@gmail.com
-                </p>
-
-                <p class="small mb-2">
-                    <i class="fas fa-phone me-2 text-primary"></i>
-                    9422479515 / 9226479515
-                </p>
-
-                <p class="small mb-0">
-                    <i class="fas fa-file-invoice me-2 text-primary"></i>
-                    GST No. 27AHRPB5249E1ZA
-                </p>
-
+                    <button type="submit" class="btn w-100 text-white"
+                            style="background:#25d366;">
+                        <i class="fab fa-whatsapp me-2"></i>Send Enquiry
+                    </button>
+                </form>
             </div>
 
         </div>
-
-
-        <hr class="border-secondary opacity-25">
-
-
-        <!-- Bottom Footer -->
-        <div class="d-md-flex justify-content-between align-items-center text-center text-md-start pt-3">
-
-            <p class="mb-0 small">
-                &copy; 2026 RB AQUA & APPLIANCES. All rights reserved.
-            </p>
-
-            <div class="small mt-2 mt-md-0">
-
-                <a href="#" class="me-3 text-decoration-none">
-                    Privacy Policy
-                </a>
-
-                <a href="#" class="me-3 text-decoration-none">
-                    Terms of Service
-                </a>
-
-                <a href="#" class="text-decoration-none">
-                    Disclaimer
-                </a>
-
-            </div>
-
-        </div>
-
     </div>
-</footer>
-```
+</div>
 
 
-    <!-- Bootstrap 5 JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
-        // Aquascotch Products Database
+        // PRODUCT DATABASE
         const AquascotchProducts = [
             {
-                id: 'Aquascotch-grand-plus',
+                id: 'copper-filter-cartridges',
                 category: 'ro',
                 tag: 'BEST SELLER',
                 title: 'Copper Filter Cartridges',
-                tech: 'Durable and easy-to-install cartridge design',
-                source: 'Suitable for compatible domestic and commercial water filtration systems',
+                tech: 'Replacement Filter Cartridge',
+                capacity: 'Compatible domestic and commercial systems',
+                source: 'Check compatibility before ordering',
                 mrp: '₹400',
                 price: '₹359',
-                discount: '15% OFF',
+                discount: '10% OFF',
                 img: '1.jpeg',
-                bullets: ['Copper-infused filtration media', 
-'Helps provide clean and refreshing water', 'Durable and easy-to-install cartridge design']
+                bullets: [
+                    'Copper-infused filtration media',
+                    'Durable cartridge design',
+                    'Easy installation on compatible systems'
+                ]
             },
             {
-                id: 'Aquascotch-prime-plus',
+                id: 'water-filter-cartridge-mlt',
                 category: 'ro',
-                tag: 'IoT ENABLED',
+                tag: 'POPULAR',
                 title: 'Water Filter Cartridge (MLT)',
-                tech: 'Digital Screen + RO + UV',
-                
-                source: 'Suitable for All Water Sources',
+                tech: 'RO Replacement Component',
+                capacity: 'Replacement filter component',
+                source: 'Check system compatibility',
                 mrp: '₹475',
-                price: '460',
+                price: '₹460',
                 discount: '3% OFF',
                 img: '2.png',
-                bullets: ['Genuine Aquascotch Cartridge', 'Long Lasting Performance', 'Enhanced Water Purification','Advanced Filtration Technology']
+                bullets: [
+                    'Replacement cartridge',
+                    'Designed for compatible systems',
+                    'Suitable for routine maintenance'
+                ]
             },
             {
-                id: 'Aquascotch-alkaline-ionizer',
+                id: 'alkaline-water-ionizer',
                 category: 'alkaline',
-                tag: 'HEALTH BOOST',
-                title: 'Aquascotch Alkaline Water Ionizer',
-                tech: 'pH 8.0 - 9.5 Alkaline',
-                capacity: 'Continuous Flow Ionizer',
-                source: 'Municipal / Purified Water Source',
-                mrp: '₹2100',
-                price: '₹1890',
-                discount: '14% OFF',
+                tag: 'ALKALINE',
+                title: 'AquaScotch Alkaline Water Ionizer',
+                tech: 'Alkaline Water Component',
+                capacity: 'Check product specifications',
+                source: 'Confirm compatibility before ordering',
+                mrp: '₹2,100',
+                price: '₹1,890',
+                discount: '10% OFF',
                 img: '3.png',
-                bullets: ['Flexible & Easy to Install', 'Leak-Resiastant Connections', 'Easy To Cut & Connect','Ideal For Replacement & Maintenance']
+                bullets: [
+                    'Flexible installation options',
+                    'Designed for compatible connections',
+                    'Suitable for replacement applications'
+                ]
             },
             {
-                id: 'Aquascotch-pearl',
+                id: 'aquascotch-carbon-block',
                 category: 'ro',
-                tag: 'DETACHABLE TANK',
-                title: 'Aquascotch Carbon Block',
-                tech: 'RO + UV + UF + TDS',
-                capacity: '8 Litres Storage | 20 L/hr',
-                source: 'Borewell & High TDS Water',
+                tag: 'RO COMPONENT',
+                title: 'AquaScotch Carbon Block',
+                tech: 'Carbon Filtration Component',
+                capacity: 'Replacement filtration part',
+                source: 'Check model compatibility',
                 mrp: '₹21,000',
                 price: '₹17,800',
                 discount: '15% OFF',
                 img: '4.png',
-                bullets: ['Stable & Efficient Power Output', 'Voltage Fluctuation Protection', 'Wide RO System Compatibility', 'Durable & Rialiable Performance']
+                bullets: [
+                    'Filtration replacement component',
+                    'Check specifications before installation',
+                    'For compatible RO systems'
+                ]
             },
             {
-                id: 'Aquascotch-maxx',
+                id: 'smps',
                 category: 'uv',
-                tag: 'TAP WATER',
-                title: 'SMPS ',
-                tech: 'UV Disinfection + UF Membrane',
-                capacity: '7 Litres Storage | 60 L/hr',
-                source: 'Suitable for Tap / Municipal Water',
+                tag: 'ELECTRICAL',
+                title: 'SMPS Power Supply',
+                tech: 'RO System Power Supply',
+                capacity: 'Select according to system requirements',
+                source: 'Confirm voltage and connector compatibility',
                 mrp: '₹11,500',
                 price: '₹9,450',
                 discount: '18% OFF',
                 img: '5.png',
-                bullets: ['Detachable Transparent Storage Tank', 'Computer Controlled Operation', 'High Power 11W UV Lamp']
+                bullets: [
+                    'Power supply replacement component',
+                    'Check output specifications',
+                    'For compatible RO systems'
+                ]
             },
             {
-                id: 'Aquascotch-gold-optima',
+                id: 'ro-booster-pump',
                 category: 'gravity',
-                tag: 'NO ELECTRICITY',
-                title: 'Aquascotch RO Booster Pump',
-                tech: 'Hollow Fiber UF Membrane',
-                capacity: '10 Litres Storage',
-                source: 'Low TDS Tap Water',
+                tag: 'RO ACCESSORY',
+                title: 'AquaScotch RO Booster Pump',
+                tech: 'RO Pump Component',
+                capacity: 'Confirm required pump specifications',
+                source: 'Check pressure and model compatibility',
                 mrp: '₹3,200',
                 price: '₹2,650',
                 discount: '17% OFF',
                 img: '6.png',
-                bullets: ['Universal RO Compatibility', 'Powerful Suction Performance', 'Queit & Smooth Operation','High-quality Copper  Winding']
+                bullets: [
+                    'Designed for compatible RO systems',
+                    'Check required operating pressure',
+                    'Suitable for replacement applications'
+                ]
             },
             {
-                id: 'Aquascotch-elite-25',
+                id: 'eva-ro-pipe',
                 category: 'commercial',
-                tag: 'COMMERCIAL',
-                title: 'Aquascotch EVA & 1/4 Inch RO Pipe',
-                tech: 'Double RO Membrane System',
-                capacity: '25 Litres/hr Purification',
-                source: 'Offices, Restaurants & Schools',
-                mrp: '₹42,000',
-                price: '₹36,500',
+                tag: 'RO ACCESSORY',
+                title: 'EVA & 1/4 Inch RO Pipe',
+                tech: 'RO Pipe and Fittings',
+                capacity: 'Confirm required pipe dimensions',
+                source: 'For compatible RO systems',
+                mrp: '₹420',
+                price: '₹365',
                 discount: '13% OFF',
                 img: '7.png',
-                bullets: ['Flexible & Durable', 'Blue & White Option', 'Easy To Cut & Connect', 'Leak-Resistant Connections','Ideal For Replacement & Maintenance']
+                bullets: [
+                    'Flexible pipe option',
+                    'Check dimensions before ordering',
+                    'For compatible replacement applications'
+                ]
             },
             {
-                id: 'Aquascotch-ultra-storage',
+                id: 'ultra-storage-uv',
                 category: 'uv',
-                tag: 'UV + STORAGE',
-                title: 'Aquascotch Ultra Storage UV Purifier',
-                tech: 'UV + UF Dual Purification',
-                capacity: '8 Litres Storage | 60 L/hr',
-                source: 'Low TDS Municipal Supply',
+                tag: 'UV COMPONENT',
+                title: 'AquaScotch Ultra Storage UV Purifier',
+                tech: 'UV + UF Purification System',
+                capacity: 'Check actual model specifications',
+                source: 'Choose according to water quality',
                 mrp: '₹10,500',
                 price: '₹8,900',
                 discount: '15% OFF',
-                img: 'https://placehold.co/400x350/0083ca/ffffff?text=Aquascotch+Ultra+Storage',
-                bullets: ['Fully Automatic Operation', 'In-built Storage Tank', 'Fail-Safe UV Alarm']
+                img: 'https://placehold.co/400x350/0083ca/ffffff?text=AquaScotch+UV',
+                bullets: [
+                    'Purification system',
+                    'Check storage and flow specifications',
+                    'Confirm installation requirements'
+                ]
             }
         ];
 
-        // Function to render product cards
-        function renderProductsGrid(products) {
-            const grid = document.getElementById('productsGrid');
-            grid.innerHTML = '';
+        // CURRENT FILTER STATE
+        let currentCategory = 'all';
+        let currentSearch = '';
 
-            if (products.length === 0) {
-                grid.innerHTML = `
-                    <div class="col-12 text-center py-5">
-                        <i class="fas fa-search-minus text-muted fs-1 mb-3"></i>
-                        <h5 class="ed">No purifiers found matching your search or category filter.</h5>
-                    </div>
-                `;
+        const productsGrid = document.getElementById('productsGrid');
+        const searchInput = document.getElementById('searchInput');
+        const resultsCount = document.getElementById('resultsCount');
+        const categoryButtons = document.querySelectorAll('[data-filter]');
+
+        // SAFELY ESCAPE PRODUCT TEXT BEFORE INSERTING INTO HTML
+        function escapeHTML(value) {
+            return String(value ?? '').replace(/[&<>"']/g, function (char) {
+                return {
+                    '&': '&amp;',
+                    '<': '&lt;',
+                    '>': '&gt;',
+                    '"': '&quot;',
+                    "'": '&#39;'
+                }[char];
+            });
+        }
+
+        // NORMALIZE SEARCH TEXT
+        function normalizeText(value) {
+            return String(value ?? '')
+                .toLowerCase()
+                .replace(/[^a-z0-9]+/g, ' ')
+                .trim();
+        }
+
+        // FILTER AND SEARCH PRODUCTS TOGETHER
+        function getFilteredProducts() {
+            const query = normalizeText(currentSearch);
+            const words = query.split(/\s+/).filter(Boolean);
+
+            return AquascotchProducts.filter(function (product) {
+                const matchesCategory =
+                    currentCategory === 'all' ||
+                    product.category === currentCategory;
+
+                const searchableText = normalizeText([
+                    product.id,
+                    product.title,
+                    product.category,
+                    product.tag,
+                    product.tech,
+                    product.capacity,
+                    product.source,
+                    product.price,
+                    product.mrp,
+                    product.discount,
+                    ...(product.bullets || [])
+                ].join(' '));
+
+                const matchesSearch = words.every(function (word) {
+                    return searchableText.includes(word);
+                });
+
+                return matchesCategory && matchesSearch;
+            });
+        }
+
+        // RENDER PRODUCTS
+        function renderProductsGrid() {
+            const filteredProducts = getFilteredProducts();
+
+            resultsCount.textContent =
+                'Showing ' + filteredProducts.length + ' of ' +
+                AquascotchProducts.length + ' products';
+
+            if (filteredProducts.length === 0) {
+                productsGrid.innerHTML = `
+                <div class="col-12 text-center py-5">
+                    <i class="fas fa-search-minus fs-1 mb-3" style="color:#94a3b8"></i>
+                    <h5>No matching products found</h5>
+                    <p style="color:#64748b">Try another keyword or clear the filters.</p>
+                    <button class="btn btn-primary rounded-pill px-4" onclick="clearFilters()">
+                        Show All Products
+                    </button>
+                </div>`;
                 return;
             }
 
-            products.forEach(p => {
-                // Build Direct WhatsApp Chat Text
-                const waText = encodeURIComponent(
-                    `Hello Aquascotch RO Team,\n\nI want to buy / inquire about this water purifier:\n` +
-                    `*Model:* ${p.title}\n` +
-                    `*Offer Price:* ${p.price} (MRP: ${p.mrp})\n` +
-                    `*Technology:* ${p.tech}\n` +
-                    `*Capacity:* ${p.capacity}\n` +
-                    `*Water Source:* ${p.source}\n\n` +
-                    `Please share details about availability and free doorstep installation!`
-                );
-                const waUrl = `https://wa.me/919278992789?text=${waText}`;
+            productsGrid.innerHTML = filteredProducts.map(function (product) {
+                const title = escapeHTML(product.title);
+                const safeImage = escapeHTML(product.img);
+                const tag = escapeHTML(product.tag);
+                const tech = escapeHTML(product.tech);
+                const price = escapeHTML(product.price);
+                const mrp = escapeHTML(product.mrp);
+                const discount = escapeHTML(product.discount);
+                const capacity = escapeHTML(product.capacity || 'Contact us for specifications');
 
-                const cardHTML = `
-                    <div class="col-sm-6 col-lg-3">
-                        <div class="product-card">
-                            <div class="product-img-holder">
-                                <span class="badge-tag">${p.tag}</span>
-                                <span class="badge-discount">${p.discount}</span>
-                                <img src="${p.img}" alt="${p.title}" loading="lazy">
-                            </div>
-                            <div class="product-details">
-                                <span class="tech-pill">${p.tech}</span>
-                                <h5 class="product-name">${p.title}</h5>
-                                <p class="text-muted small mb-2"><i class="fas fa-tint text-primary me-1"></i> ${p.capacity}</p>
-                                <ul class="spec-list">
-                                    ${p.bullets.map(b => `<li><i class="fas fa-check-circle"></i> ${b}</li>`).join('')}
-                                </ul>
-                                <div class="price-wrapper">
-                                    <div class="d-flex align-items-baseline mb-3">
-                                        <span class="price-current">${p.price}</span>
-                                        <span class="price-mrp">${p.mrp}</span>
-                                    </div>
-                                    <div class="d-flex flex-column gap-2">
-                                        <button class="btn btn-card-demo" onclick="openDemoModalForProduct('${p.title}')">
-                                            <i class="fas fa-flask me-1"></i> Book Free Demo
-                                        </button>
-                                        <a href="${waUrl}" target="_blank" class="btn btn-card-wa">
-                                            <i class="fab fa-whatsapp fs-5"></i> Buy / Chat on WhatsApp
-                                        </a>
-                                    </div>
+                const bulletHTML = (product.bullets || []).map(function (bullet) {
+                    return `<li><i class="fas fa-check-circle"></i>${escapeHTML(bullet)}</li>`;
+                }).join('');
+
+                const message = encodeURIComponent(
+                    'Hello RB Aqua & Appliances,\n\n' +
+                    'I am interested in this product:\n' +
+                    'Product: ' + product.title + '\n' +
+                    'Price: ' + product.price + '\n' +
+                    'Specifications: ' + product.tech + '\n' +
+                    'Capacity/details: ' + (product.capacity || 'Please share details') + '\n\n' +
+                    'Please confirm availability and compatibility.'
+                );
+
+                const whatsappURL = 'https://wa.me/919422479515?text=' + message;
+
+                return `
+                <div class="col-6 col-lg-3 col-md-4">
+                    <div class="product-card">
+                        <div class="product-img-holder">
+                            <span class="badge-tag">${tag}</span>
+                            <span class="badge-discount">${discount}</span>
+                            <img src="${safeImage}" alt="${title}" loading="lazy"
+                                 onerror="this.onerror=null;this.src='https://placehold.co/400x350/f4f6f9/003366?text=Product+Image';">
+                        </div>
+
+                        <div class="product-details">
+                            <span class="tech-pill">${tech}</span>
+                            <h5 class="product-name">${title}</h5>
+                            <p class="small mb-2" style="color:#64748b">
+                                <i class="fas fa-box me-1" style="color:#0083ca"></i>
+                                ${capacity}
+                            </p>
+
+                            <ul class="spec-list">${bulletHTML}</ul>
+
+                            <div class="price-wrapper">
+                                <div class="d-flex align-items-baseline flex-wrap mb-3">
+                                    <span class="price-current">${price}</span>
+                                    <span class="price-mrp">${mrp}</span>
+                                </div>
+
+                                <div class="d-flex flex-column gap-2">
+                                    <button type="button" class="btn-card-demo"
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#demoModal"
+                                            data-product="${escapeHTML(product.title)}">
+                                        <i class="fas fa-calendar-check"></i> Book Now
+                                    </button>
+
+                                    <a href="${whatsappURL}" target="_blank" rel="noopener"
+                                       class="btn-card-wa">
+                                        <i class="fab fa-whatsapp fs-5"></i> Enquire on WhatsApp
+                                    </a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                `;
-                grid.innerHTML += cardHTML;
+                </div>`;
+            }).join('');
+        }
+
+        // CATEGORY FILTER
+        function filterCategory(category) {
+            currentCategory = category;
+            updateActiveCategory();
+            renderProductsGrid();
+        }
+
+        function updateActiveCategory() {
+            categoryButtons.forEach(function (button) {
+                button.classList.toggle(
+                    'active',
+                    button.dataset.filter === currentCategory
+                );
             });
         }
 
-        // Category Filtering Function
-        function filterCategory(cat, btnElement) {
-            // Update active state on buttons
-            if (btnElement) {
-                const btns = document.querySelectorAll('.filter-btn');
-                btns.forEach(b => b.classList.remove('active'));
-                btnElement.classList.add('active');
-            }
+        // LIVE SEARCH: PRESERVES SELECTED CATEGORY
+        searchInput.addEventListener('input', function () {
+            currentSearch = searchInput.value;
+            renderProductsGrid();
+        });
 
-            if (cat === 'all') {
-                renderProductsGrid(AquascotchProducts);
-            } else {
-                const filtered = AquascotchProducts.filter(p => p.category === cat);
-                renderProductsGrid(filtered);
-            }
-        }
+        // SEARCH BUTTON AND ENTER KEY
+        document.getElementById('searchForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            currentSearch = searchInput.value;
+            renderProductsGrid();
 
-        // Search Input Handling
-        function handleSearch() {
-            const input = document.getElementById('searchInput');
-            const query = input.value.toLowerCase().trim();
-
-            // Empty search = show all products
-            if (!query) {
-                renderProductsGrid(AquascotchProducts);
-                return;
-            }
-
-            // Normalize text so search works with spaces, hyphens, &, etc.
-            const normalize = (text) => String(text ?? '')
-                .toLowerCase()
-                .replace(/[^a-z0-9]+/g, ' ')
-                .replace(/\s+/g, ' ')
-                .trim();
-
-            const searchWords = normalize(query).split(' ').filter(Boolean);
-
-            const filtered = AquascotchProducts.filter(p => {
-                // Search through ALL product details
-                const searchableText = normalize([
-                    p.id,
-                    p.title,
-                    p.category,
-                    p.tag,
-                    p.tech,
-                    p.capacity,
-                    p.source,
-                    p.mrp,
-                    p.price,
-                    p.discount,
-                    ...(p.bullets || [])
-                ].join(' '));
-
-                // Every word typed must exist in the product details
-                return searchWords.every(word => searchableText.includes(word));
-            });
-
-            renderProductsGrid(filtered);
-
-            // Show filtered products immediately
             document.getElementById('products').scrollIntoView({
                 behavior: 'smooth',
                 block: 'start'
             });
+        });
+
+        // CATEGORY BUTTONS
+        categoryButtons.forEach(function (button) {
+            button.addEventListener('click', function () {
+                filterCategory(button.dataset.filter);
+            });
+        });
+
+        // CATEGORY LINKS IN NAVIGATION AND FOOTER
+        document.querySelectorAll('a[data-category]').forEach(function (link) {
+            link.addEventListener('click', function () {
+                filterCategory(link.dataset.category);
+            });
+        });
+
+        // CLEAR SEARCH AND FILTERS
+        function clearFilters() {
+            currentCategory = 'all';
+            currentSearch = '';
+            searchInput.value = '';
+            updateActiveCategory();
+            renderProductsGrid();
         }
 
-        // Search button click
-        document.querySelector('.search-bar-btn').addEventListener('click', handleSearch);
+        document.getElementById('clearFilters').addEventListener('click', clearFilters);
 
-        // Search on Enter key
-        document.getElementById('searchInput').addEventListener('keydown', function(e) {
-            if (e.key === 'Enter') {
-                e.preventDefault();
-                handleSearch();
+        // BOOK NOW MODAL: PREFILL PRODUCT NAME
+        document.getElementById('demoModal').addEventListener('show.bs.modal', function (event) {
+            const trigger = event.relatedTarget;
+            const productInput = document.getElementById('mSelectedProduct');
+
+            if (trigger && trigger.dataset.product) {
+                productInput.value = trigger.dataset.product;
+            } else {
+                productInput.value = 'General Product Enquiry';
             }
         });
 
-        // Open Modal pre-filled with Product Name
-        function openDemoModalForProduct(productName) {
-            document.getElementById('mSelectedProduct').value = productName;
-            const demoModal = new bootstrap.Modal(document.getElementById('demoModal'));
-            demoModal.show();
-        }
+        // SUBMIT ENQUIRY ON WHATSAPP
+        document.getElementById('modalDemoForm').addEventListener('submit', function (event) {
+            event.preventDefault();
 
-        // Submit Modal Request via WhatsApp
-        function submitModalDemo(e) {
-            e.preventDefault();
-            const fn = document.getElementById('mFirstName').value;
-            const ln = document.getElementById('mLastName').value;
-            const mob = document.getElementById('mMobile').value;
-            const city = document.getElementById('mCity').value;
-            const pin = document.getElementById('mPincode').value;
-            const prod = document.getElementById('mSelectedProduct').value;
+            const firstName = document.getElementById('mFirstName').value.trim();
+            const lastName = document.getElementById('mLastName').value.trim();
+            const mobile = document.getElementById('mMobile').value.trim();
+            const city = document.getElementById('mCity').value.trim();
+            const pincode = document.getElementById('mPincode').value.trim();
+            const product = document.getElementById('mSelectedProduct').value.trim();
 
-            const msg = encodeURIComponent(
-                `*FREE HOME DEMO & TDS TEST REQUEST*\n\n` +
-                `*Customer:* ${fn} ${ln}\n` +
-                `*Mobile:* ${mob}\n` +
-                `*City:* ${city} (${pin})\n` +
-                `*Product Interested:* ${prod}\n\n` +
-                `Please contact me to confirm demo schedule!`
+            if (!/^[0-9]{10}$/.test(mobile)) {
+                alert('Please enter a valid 10-digit mobile number.');
+                return;
+            }
+
+            if (!/^[0-9]{6}$/.test(pincode)) {
+                alert('Please enter a valid 6-digit pincode.');
+                return;
+            }
+
+            const message = encodeURIComponent(
+                'BOOK NOW - PRODUCT ENQUIRY\n\n' +
+                'Customer: ' + firstName + ' ' + lastName + '\n' +
+                'Mobile: ' + mobile + '\n' +
+                'City: ' + city + '\n' +
+                'Pincode: ' + pincode + '\n' +
+                'Product: ' + product + '\n\n' +
+                'Please contact me regarding this enquiry.'
             );
 
-            window.open(`https://wa.me/919278992789?text=${msg}`, '_blank');
-        }
-
-        // Initial Load
-        document.addEventListener('DOMContentLoaded', () => {
-            renderProductsGrid(AquascotchProducts);
+            const whatsappURL = 'https://wa.me/919422479515?text=' + message;
+            window.open(whatsappURL, '_blank', 'noopener');
         });
+
+        // INITIAL LOAD
+        renderProductsGrid();
     </script>
+
 </body>
+
 </html>
